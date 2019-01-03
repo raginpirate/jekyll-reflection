@@ -1,0 +1,36 @@
+<script src="/assets/js/index/mobileDropdownCloser.js"></script>
+<script src="/assets/js/index/navbarLinkLocator.js"></script>
+<script src="/assets/js/index/viewportResizingFixer.js"></script>
+<script src="/assets/js/index/hiddenElementsStyler.js"></script>
+<script src="/assets/js/index/pageSwitcher.js"></script>
+
+<script>
+    const mobileDropdownCloser = new MobileDropdownCloser({
+        mainNavHeaderSelector: '#mainNavHeader',
+        mainNavButtonSelector: '#mainNavButton',
+        mainNavCollapseSelector: '#mainNavCollapse'
+    });
+
+    const navbarLinkLocator = new NavbarLinkLocator({
+        paneIds: ["homePage", "page2", "page3", "page4"],
+        navbarId: "mainNavCollapse",
+        navbarOffset: 56
+    });
+
+    const viewportResizingFixer = new ViewportResizingFixer({
+        paneSelectors: ["#homePage"]
+    });
+
+    $("#headshot").css({"max-height": $("#headshot").height()});
+
+    const hiddenElementsStyler = new HiddenElementsStyler({
+        "#page2": ["shrink"],
+        "#project10": ["hidden"]
+    });
+
+    const pageSwitcher = new PageSwitcher({
+        startingPage: "#projectsRow3",
+        sortingTable: "#sortingTable",
+        pageLinks: ["#projectLink10"]
+    });
+</script>
