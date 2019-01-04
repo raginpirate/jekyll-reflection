@@ -10,15 +10,16 @@
  * @param {object} [opts] - An optional hash used for setup, as described above.
  */
 const ViewportResizingFixer = function (opts) {
-    let windowHeight = $(window).height();
 
     const init = function () {
-        opts.paneSelectors.forEach(setPaneHeights);
-    };
-
-    const setPaneHeights = function (value, index, array) {
-        $pane = $(value);
-        $pane.css({"min-height": $pane.height()});
+        for (let index in opts) {
+            $pane = $(index);
+            if (opts[index].includes("height")) {
+                $pane.css(opts[index], $pane.height());
+            } else {
+                $pane.css(opts[index], $pane.width());
+            }
+        }
     };
 
     init();

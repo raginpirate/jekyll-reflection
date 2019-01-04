@@ -18,7 +18,8 @@
     });
 
     const viewportResizingFixer = new ViewportResizingFixer({
-        paneSelectors: ["#homePage"]
+        "#homePage": "min-height",
+        "#headshot": "max-height"
     });
 
     $("#headshot").css({"max-height": $("#headshot").height()});
