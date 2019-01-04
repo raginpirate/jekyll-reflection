@@ -3,6 +3,7 @@
 <script src="/assets/js/index/viewportResizingFixer.js"></script>
 <script src="/assets/js/index/hiddenElementsStyler.js"></script>
 <script src="/assets/js/index/projectSwitcher.js"></script>
+<script src="/assets/js/index/projectFilterer.js"></script>
 
 <script>
     const mobileDropdownCloser = new MobileDropdownCloser({
@@ -14,7 +15,8 @@
     const navbarLinkLocator = new NavbarLinkLocator({
         paneIds: ["homePage", "page2", "page3", "page4"],
         navbarId: "mainNavCollapse",
-        navbarOffset: 56
+        navbarOffset: 56,
+        mobileHomeButtonSelector: "#mobileHomeButton"
     });
 
     const viewportResizingFixer = new ViewportResizingFixer({
@@ -29,5 +31,10 @@
 
     const projectSwitcher = new ProjectSwitcher({
         projectLinksSelector: "#projectLinks"
+    });
+
+    const projectFilterer = new ProjectFilterer({
+        linksCntSelector: ".project-link-cnt",
+        filterLinksSelector: "#project-list"
     });
 </script>
