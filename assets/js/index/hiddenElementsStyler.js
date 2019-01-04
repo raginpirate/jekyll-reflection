@@ -16,13 +16,14 @@ const HiddenElementsStyler = function (opts) {
         const $window = $(window);
         const windowHeight = $window.height();
         const scrollLoc = $window.scrollTop();
+        let index = 0;
         for (let key in opts) {
-            let $elem = $(key);
-            if ($elem.offset().top - scrollLoc >= windowHeight) {
-                //element is not visible!
+            $(key).each(function () {
+                let $elem = $(this);
                 $elem.addClass(opts[key].join(" "));
-                $invisibleElems[key] = [$elem, opts[key].join(" ")];
-            }
+                $invisibleElems[index] = [$elem, opts[key].join(" ")];
+                index++;
+            });
         }
         interval = setInterval(checkTrigger, 250);
     };

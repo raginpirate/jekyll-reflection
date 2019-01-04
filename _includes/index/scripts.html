@@ -2,7 +2,7 @@
 <script src="/assets/js/index/navbarLinkLocator.js"></script>
 <script src="/assets/js/index/viewportResizingFixer.js"></script>
 <script src="/assets/js/index/hiddenElementsStyler.js"></script>
-<script src="/assets/js/index/pageSwitcher.js"></script>
+<script src="/assets/js/index/projectSwitcher.js"></script>
 
 <script>
     const mobileDropdownCloser = new MobileDropdownCloser({
@@ -18,19 +18,16 @@
     });
 
     const viewportResizingFixer = new ViewportResizingFixer({
-        paneSelectors: ["#homePage"]
+        "#homePage": "min-height",
+        "#headshot": "max-height"
     });
-
-    $("#headshot").css({"max-height": $("#headshot").height()});
 
     const hiddenElementsStyler = new HiddenElementsStyler({
         "#page2": ["shrink"],
-        "#project10": ["hidden"]
+        ".project-link-cnt": ["hidden"]
     });
 
-    const pageSwitcher = new PageSwitcher({
-        startingPage: "#projectsRow3",
-        sortingTable: "#sortingTable",
-        pageLinks: ["#projectLink10"]
+    const projectSwitcher = new ProjectSwitcher({
+        projectLinksSelector: "#projectLinks"
     });
 </script>

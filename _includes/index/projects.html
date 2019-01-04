@@ -1,0 +1,26 @@
+<div class="background-wrapper slow-transition" style="background-image: linear-gradient(#ffffff, #e2e2e2);" alt="" id="page3" data-nav-id="navPage3">
+    <div class="container-fluid no-overflow-x">
+        <div class="mg-row">
+            <h1 class="mg-bot text-center">Projects</h1>
+            <div id="projectLinks">
+                <div class="table" id="sortingTable">
+                    <ul id="horizontal-list" class="inline-table">
+                        <li><a href="#">All</a></li>
+                        <li><a href="#">Process Automation</a></li>
+                        <li><a href="#">Concurrency</a></li>
+                        <li><a href="#">A.I.</a></li>
+                        <li><a href="#">Full Stack</a></li>
+                    </ul>
+                </div>
+                <div class="row" id="projectsRow3">
+                    {% for project_name in project_names %}
+                        {% include index/projects/{{project_name}}/link.html %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% for project_name in project_names %}
+                {% include index/projects/{{project_name}}/page.html %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

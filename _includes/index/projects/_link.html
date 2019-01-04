@@ -1,0 +1,14 @@
+<div class="col-sm-6 col-md-4 col-lg-3 slow-transition image-padding project-link-cnt">
+    <a href="#" class="project-link" id="projectLink{{ include.id }}" data-page-id="projectPage{{ include.id }}">
+        <div class="zoom-bounds">
+            <img class="img-fluid zoom-blur" src="{{ include.img_src }}">
+            <div class="hidden-abs-text">
+                <div>
+                    <h2 class="inner-div-mg">{{ include.name }}</h2>
+                    <p class="inner-div-mg">{{ include.tags }}</p>
+                </div>
+                <p class="inner-div-mg indented-p">{{ include.description }}</p>
+            </div>
+        </div>
+    </a>
+</div>

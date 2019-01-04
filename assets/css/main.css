@@ -136,7 +136,7 @@ a.disabled {
 
 .home-background {
     background-repeat: no-repeat;
-    background-image: url('/assets/img/trees.jpg');
+    background-image: url('/assets/img/homeBackground.jpg');
     background-color: #fbfbfb;
     background-blend-mode: screen;
     min-height: 100vh;
