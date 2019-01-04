@@ -280,6 +280,10 @@ ul#project-list li {
     background: rgba(255, 255, 255, 0.2);
 }
 
+.home-button-img {
+    padding-bottom: 5px;
+}
+
 @media (max-width: 575px) {
     .nav-item {
         border-bottom-width: 1px;
@@ -342,6 +346,30 @@ ul#project-list li {
             opacity: 1;
         }
     }
+
+    .home-button {
+        position: fixed;
+        bottom: -40px;
+        right: 17px;
+        height: 29px;
+        width: 29px;
+        border-radius: 50%;
+        z-index: 2;
+        background: rgba(81, 81, 81, 0.5);
+        outline:none !important;
+    }
+
+    .flip {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    .show {
+        bottom: 17px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -357,6 +385,10 @@ ul#project-list li {
 }
 
 @media (min-width: 576px) {
+    #mobileHomeButton {
+        display: none;
+    }
+
     @keyframes slideInRight {
         from {
             width: 120%;

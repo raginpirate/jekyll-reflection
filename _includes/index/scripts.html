@@ -15,7 +15,8 @@
     const navbarLinkLocator = new NavbarLinkLocator({
         paneIds: ["homePage", "page2", "page3", "page4"],
         navbarId: "mainNavCollapse",
-        navbarOffset: 56
+        navbarOffset: 56,
+        mobileHomeButtonSelector: "#mobileHomeButton"
     });
 
     const viewportResizingFixer = new ViewportResizingFixer({

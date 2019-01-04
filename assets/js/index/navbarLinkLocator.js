@@ -11,6 +11,7 @@
  */
 const NavbarLinkLocator = function (opts) {
     let mainNavCollapse = document.getElementById(opts.navbarId);
+    let $mobileHomeButton = $(opts.mobileHomeButtonSelector);
     let documentPanes = [];
     let navLinks = [];
     let lastDisabled;
@@ -19,6 +20,9 @@ const NavbarLinkLocator = function (opts) {
         opts.paneIds.forEach(setPanes);
         lastDisabled = navLinks[0];
         setInterval(checkLocation, 250);
+        $mobileHomeButton.click(function () {
+            $(window).scrollTop(0);
+        });
     };
 
     const setPanes = function (value, index, array) {
@@ -50,6 +54,11 @@ const NavbarLinkLocator = function (opts) {
 
     const setNewDisabled = function (index) {
         if (lastDisabled != navLinks[index]) {
+            if (index == 0) {
+                $mobileHomeButton.removeClass("show flip");
+            } else if(lastDisabled == navLinks[0]) {
+                $mobileHomeButton.addClass("show flip");
+            }
             lastDisabled.className = "nav-link";
             lastDisabled = navLinks[index];
             lastDisabled.className = "nav-link disabled";
