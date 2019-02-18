@@ -1,0 +1,9 @@
+.project-title-scheduler {
+    font-size: 12vw;
+}
+
+@media (min-width: 1340px) {
+    .project-title-scheduler {
+        font-size: 160.8px;
+    }
+}

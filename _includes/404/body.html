@@ -1,6 +1,7 @@
 <div class="background-wrapper home-background" alt="">
     <div class="container-fluid text-center align-middle">
-        <img class="mx-auto" src="/assets/img/404/body/404.png" alt="404" />
+        {% assign lazy_images_path="404" %}
+        {% include _lazy_image.html classes="mx-auto vh-40" alt="404" lazy_images_path=lazy_images_path %}
         <h1>Page Not Found</h1>
         <hr>
         <p id="timer">Redirecting in 5s..</p>

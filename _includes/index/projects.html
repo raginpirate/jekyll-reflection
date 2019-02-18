@@ -1,25 +1,33 @@
-<div class="background-wrapper slow-transition" style="background-image: linear-gradient(#ffffff, #e2e2e2);" alt="" id="page3" data-nav-id="navPage3">
+<div class="background-wrapper slow-transition-filters" style="background: #fbfbfb;" alt="" id="page3" data-nav-id="navPage3">
     <div class="container-fluid no-overflow-x">
-        <div class="mg-row">
-            <h1 class="mg-bot text-center">Projects</h1>
-            <div id="projectLinks">
-                <div class="table" id="sortingTable">
-                    <ul id="project-list" class="inline-table">
-                        <li><a href="#" data-filter="all">All</a></li>
-                        <li><a href="#" data-filter="Process Automation">Process Automation</a></li>
-                        <li><a href="#" data-filter="Concurrency">Concurrency</a></li>
-                        <li><a href="#" data-filter="A.I.">A.I.</a></li>
-                        <li><a href="#" data-filter="Full Stack">Full Stack</a></li>
-                    </ul>
+        <div class="mg-row mx-0">
+            <h2 class="mg-bot text-center">PROJECTS</h2>
+            <div id="projectLinks" class="mx-3">
+                <div class="row justify-center" id="project-list">
+                    <div class="image-padding">
+                        <a href="#" data-filter="all" class="dark-link selected">All</a>
+                    </div>
+                    <div class="image-padding">
+                        <a href="#" data-filter="Process Automation" class="dark-link">Process Automation</a>
+                    </div>
+                    <div class="image-padding">
+                        <a href="#" data-filter="Concurrency" class="dark-link">Concurrency</a>
+                    </div>
+                    <div class="image-padding">
+                        <a href="#" data-filter="A.I." class="dark-link">A.I.</a>
+                    </div>
+                    <div class="image-padding">
+                        <a href="#" data-filter="Full Stack" class="dark-link">Full Stack</a>
+                    </div>
                 </div>
                 <div class="row" id="projectsRow3">
-                    {% for project_name in project_names %}
-                        {% include index/projects/{{project_name}}/link.html %}
+                    {% for project in site.data.projects %}
+                        {% include index/projects/_link.html project=project %}
                     {% endfor %}
                 </div>
             </div>
-            {% for project_name in project_names %}
-                {% include index/projects/{{project_name}}/page.html %}
+            {% for project in site.data.projects %}
+                {% include index/projects/_page.html project=project %}
             {% endfor %}
         </div>
     </div>

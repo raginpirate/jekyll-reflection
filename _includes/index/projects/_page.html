@@ -1,0 +1,66 @@
+<div class="container-fluid" style="display: none; background: #d3d3d3;" id="{{ include.project.name }}ProjectPage">
+    <div class="row">
+        <button class="btn mx-auto d-block-hideable block-popup-btn top-hide-btn">
+            <img src="{% asset chevron-down-solid.svg @path %}" width="20" style="-moz-transform: scaleY(-1);
+        -o-transform: scaleY(-1);
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);"/>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-md-12 p-0">
+            <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%">
+                <h1 class="text-center project-title project-title-{{ include.project.name }} mb-0">{{ include.project.display_name }}</h1>
+            </div>
+            {% assign lazy_images_path="index/projects/" | append: include.project.name | append: "/banner" %}
+            {% include _lazy_image.html classes="mx-auto d-block banner" alt=include.project.name lazy_images_path=lazy_images_path %}
+        </div>
+        <div class="col-md-6 p-0">
+            {% assign lazy_images_path="index/projects/" | append: include.project.name | append: "/preview_img_1" %}
+            {% include _lazy_image.html classes="mx-auto d-block banner" alt=include.project.preview_img_alt_1 lazy_images_path=lazy_images_path %}
+            <div class="p-5">
+                <h2>What is it?</h2>
+                <p class="indented-p mb-0">{{ include.project.what_is_it }}</p>
+            </div>
+        </div>
+        <div class="col-md-6 p-0">
+            {% assign lazy_images_path="index/projects/" | append: include.project.name | append: "/preview_img_2" %}
+            {% include _lazy_image.html classes="mx-auto d-block banner" alt=include.project.preview_img_alt_2 lazy_images_path=lazy_images_path %}
+            <div class="p-5">
+                <h2>How does it work?</h2>
+                <p class="indented-p mb-0">{{ include.project.how_does_it_work }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 p-0">
+            {% assign lazy_images_path="index/projects/" | append: include.project.name | append: "/banner_2" %}
+            {% include _lazy_image.html classes="mx-auto d-block banner" alt=include.project.banner_2_alt lazy_images_path=lazy_images_path %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 p-0">
+            <div class="p-5">
+                <h2>Takeaways</h2>
+                <p class="indented-p mb-0">{{ include.project.takeaways }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 p-0">
+            <div class="px-5">
+                <hr>
+                <h6 class="text-center pt-1">SOFTWARE / FRAMEWORKS</h6>
+                <p class="text-center mb-0" style="font-size: 15px;">{{ include.project.frameworks }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn mx-auto d-block-hideable block-popup-btn btm-hide-btn">
+            <img src="{% asset chevron-down-solid.svg @path %}" width="20" style="-moz-transform: scaleY(-1);
+        -o-transform: scaleY(-1);
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);"/>
+        </button>
+    </div>
+</div>

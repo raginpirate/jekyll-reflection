@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-transparent-white fixed-top">
+<nav class="navbar navbar-expand-sm navbar-light bg-transparent-white slow-transition-background fixed-top" id="navbar" style="box-shadow: 1px 1px rgba(0, 0, 0, 0.1);">
     <div class="container-fluid nav-container no-overflow-x">
         <div class="navbar-header" id="mainNavHeader">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <img src="{% asset favicon.png @path %}" class="d-inline-block align-top nav-image" alt="">
                 Daniel Wyckoff
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainNavCollapse" aria-controls="mainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <img class="navbar-toggle-icon" src="/assets/img/chevron-down-solid.svg" alt="Menu">
+                <img class="navbar-toggle-icon" src="{% asset chevron-down-solid.svg @path %}" alt="Menu">
             </button>
         </div>
         <div class="collapse navbar-collapse" id="mainNavCollapse">
@@ -27,4 +27,4 @@
         </div>
     </div>
 </nav>
-<button id="mobileHomeButton" href="#" class="slow-transition home-button"><img class="home-button-img" src="/assets/img/chevron-down-solid.svg" alt="Home Button"></button>
+<a id="mobileHomeButton" href="#" class="slow-transition-all home-button"><img class="mx-auto home-button-img" src="{% asset chevron-down-solid.svg @path %}" alt="Home Button"></a>

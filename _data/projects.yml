@@ -1,0 +1,56 @@
+- name: "cprbot"
+  display_name: "CPR BOT"
+  tags: "Process Automation | Java"
+  link_description: "A process automating robot that inserts CPR course bookings into the Red Cross's database remotely."
+  what_is_it: "CPR Bot helps Save-A-Life-CPR by automatically forwarding data from customer bookings to the red cross via form submission."
+  how_does_it_work: "CPR Bot uses a webhook attached to Bookeo (the company's booking software) that fires when a course booking is made.  \
+  This information is parsed, validated, and submitted to the Red Cross in their requested format. Emails are then generated to log the    \
+  work of CPR Bot."
+  takeaways: "CPR Bot was my introductory project for web technologies. I learned a ton about HTTP and nice QA tools for Java. Moreover, I \
+  got to practice my consulting skills! It was enjoyable engineering a solution from a simple procedure the company was carrying out. If I \
+  had the opprotunity to tackle this problem again, I probably would have chosen a much more web-oriented language / framework for this    \
+  job, but Java was my language of choice at the time."
+  frameworks: "Java, Selenium, Eclipse"
+  preview_img_alt_1: ""
+  preview_img_alt_2: ""
+  banner_2_alt: ""
+  primary_color: ""
+  secondary_color: ""
+
+- name: "verification"
+  display_name: "EXTRA VERIFICATION"
+  tags: "Shopify | Rails | Full Stack"
+  link_description: "A stand-alone Shopify app that protects small store owners from fraudulent orders and chargebacks."
+  what_is_it: "Extra Verification is a one-click to install Shopify app that requests additional verification automatically from shoppers  \
+  that create suspiscious looking orders for the first time."
+  how_does_it_work: "The app was built using Shopify's template application gem. It utilizes a webhook for Shopify orders that we can      \
+  inspect to validate if an order looks suspiscious (based on the User's defined settings). If so, we email both the customer and store      \
+  about the verification requirement, and display all of this information in nice Polaris standard forms."
+  takeaways: "Rails is sweet and so is Shopify! It was a really awesome experience building a fully-functional application from the ground \
+  up. I learned a ton about conventional rails problem solving and decoupling (development of concerns, helpers, decorators, and jobs). I  \
+  also really enjoyed how simplistic the Shopify App gem is to start a project with."
+  frameworks: "Rails, Shopify-App, Git, Rubymine"
+  preview_img_alt_1: ""
+  preview_img_alt_2: ""
+  banner_2_alt: ""
+  primary_color: ""
+  secondary_color: ""
+
+- name: "scheduler"
+  display_name: "THEME SCHEDULER"
+  tags: "Shopify | Rails | Full Stack"
+  link_description: "A stand-alone Shopify app that protects small store owners from fraudulent orders and chargebacks."
+  what_is_it: "Extra Verification is a one-click to install Shopify app that requests additional verification automatically from shoppers  \
+  that create suspiscious looking orders for the first time."
+  how_does_it_work: "The app was built using Shopify's template application gem. It utilizes a webhook for Shopify orders that we can      \
+  inspect to validate if an order looks suspiscious (based on the User's defined settings). If so, we email both the customer and store      \
+  about the verification requirement, and display all of this information in nice Polaris standard forms."
+  takeaways: "Rails is sweet and so is Shopify! It was a really awesome experience building a fully-functional application from the ground \
+  up. I learned a ton about conventional rails problem solving and decoupling (development of concerns, helpers, decorators, and jobs). I  \
+  also really enjoyed how simplistic the Shopify App gem is to start a project with."
+  frameworks: "Rails, Shopify-App, Git, Rubymine"
+  preview_img_alt_1: ""
+  preview_img_alt_2: ""
+  banner_2_alt: ""
+  primary_color: ""
+  secondary_color: ""

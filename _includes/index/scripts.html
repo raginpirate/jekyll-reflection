@@ -1,40 +1,41 @@
-<script src="/assets/js/index/mobileDropdownCloser.js"></script>
-<script src="/assets/js/index/navbarLinkLocator.js"></script>
-<script src="/assets/js/index/viewportResizingFixer.js"></script>
-<script src="/assets/js/index/hiddenElementsStyler.js"></script>
-<script src="/assets/js/index/projectSwitcher.js"></script>
-<script src="/assets/js/index/projectFilterer.js"></script>
-
 <script>
+    /* BEGIN Index JS */
+    const viewportResizingFixer = new ViewportResizingFixer({
+        "#homePage": "height",
+        ".vh-40": "height"
+    });
+    const hiddenElementsStyler = new HiddenElementsStyler({
+        "#page2": {classes: ["shrink"], recur: false},
+        ".project-link-cnt": {classes: ["hidden"], recur: false},
+        ".background-wrapper": {classes: ["greyscale"], recur: false}
+    });
+    /* END Index JS */
+    /* BEGIN Index/Nav JS */
     const mobileDropdownCloser = new MobileDropdownCloser({
         mainNavHeaderSelector: '#mainNavHeader',
         mainNavButtonSelector: '#mainNavButton',
         mainNavCollapseSelector: '#mainNavCollapse'
     });
-
-    const navbarLinkLocator = new NavbarLinkLocator({
-        paneIds: ["homePage", "page2", "page3", "page4"],
-        navbarId: "mainNavCollapse",
-        navbarOffset: 56,
+    const navbarLinksController = new NavbarLinksController({
+        paneIds: ["#homePage", "#page2", "#page3", "#page4"],
+        navbarId: "#mainNavCollapse",
+        navbarOffset: 47,
         mobileHomeButtonSelector: "#mobileHomeButton"
     });
-
-    const viewportResizingFixer = new ViewportResizingFixer({
-        "#homePage": "min-height",
-        "#headshot": "max-height"
-    });
-
-    const hiddenElementsStyler = new HiddenElementsStyler({
-        "#page2": ["shrink"],
-        ".project-link-cnt": ["hidden"]
-    });
-
+    /* END Index/Nav JS */
+    /* BEGIN Index/Projects JS */
     const projectSwitcher = new ProjectSwitcher({
-        projectLinksSelector: "#projectLinks"
+        linkContainerSelector: "#projectLinks",
+        projectLinksSelector: ".project-link",
+        projectIdDataName: "page-id",
+        topResetBtnSelector: ".top-hide-btn",
+        btmResetBtnSelector: ".btm-hide-btn",
+        topContainerSelector: "#page3"
     });
-
     const projectFilterer = new ProjectFilterer({
         linksCntSelector: ".project-link-cnt",
-        filterLinksSelector: "#project-list"
+        filterLinksSelector: "#project-list",
+        selectedSelector: ".selected"
     });
+    /* END Index/Projects JS */
 </script>
