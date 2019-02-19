@@ -1,9 +1,10 @@
 .project-title-verification {
-    font-size: 11vw;
+    font-size: 12vw;
+    word-wrap: break-word;
 }
 
 @media (min-width: 1340px) {
     .project-title-verification {
-        font-size: 147.4px;
+        font-size: 160.8px;
     }
 }
