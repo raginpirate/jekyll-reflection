@@ -1,15 +1,12 @@
-<div class="container-fluid" style="display: none; background: #d3d3d3;" id="{{ include.project.name }}ProjectPage">
+<div class="container-fluid project-background project-background-{{ include.project.name }}" id="{{ include.project.name }}ProjectPage">
     <div class="row">
         <button class="btn mx-auto d-block-hideable block-popup-btn top-hide-btn">
-            <img src="{% asset chevron-down-solid.svg @path %}" width="20" style="-moz-transform: scaleY(-1);
-        -o-transform: scaleY(-1);
-        -webkit-transform: scaleY(-1);
-        transform: scaleY(-1);"/>
+            <img src="{% asset chevron-down-solid.svg @path %}" width="20" class="flip"/>
         </button>
     </div>
     <div class="row">
         <div class="col-md-12 p-0">
-            <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%">
+            <div class="banner-container">
                 <h1 class="text-center project-title project-title-{{ include.project.name }} mb-0">{{ include.project.display_name }}</h1>
             </div>
             {% assign lazy_images_path="index/projects/" | append: include.project.name | append: "/banner" %}
@@ -51,16 +48,13 @@
             <div class="px-5">
                 <hr>
                 <h6 class="text-center pt-1">SOFTWARE / FRAMEWORKS</h6>
-                <p class="text-center mb-0" style="font-size: 15px;">{{ include.project.frameworks }}</p>
+                <p class="text-center mb-0 small">{{ include.project.frameworks }}</p>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row pt-3">
         <button class="btn mx-auto d-block-hideable block-popup-btn btm-hide-btn">
-            <img src="{% asset chevron-down-solid.svg @path %}" width="20" style="-moz-transform: scaleY(-1);
-        -o-transform: scaleY(-1);
-        -webkit-transform: scaleY(-1);
-        transform: scaleY(-1);"/>
+            <img src="{% asset chevron-down-solid.svg @path %}" width="20" class="flip"/>
         </button>
     </div>
 </div>
