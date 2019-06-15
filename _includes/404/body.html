@@ -1,9 +1,10 @@
-<div class="background-wrapper home-background" alt="">
-    <div class="container-fluid text-center align-middle">
-        {% assign lazy_images_path="404" %}
-        {% include _lazy_image.html classes="mx-auto vh-40" alt="404" lazy_images_path=lazy_images_path %}
-        <h1>Page Not Found</h1>
-        <hr>
-        <p id="timer">Redirecting in 5s..</p>
+<div class="container vh-100">
+    <div class="row h-100 justify-content-center">
+        <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center">
+            {% include _lazy_image.html classes="h-25 mb-3" alt="404" lazy_images_path="404" %}
+            <h1>Page Not Found</h1>
+            <hr class="w-50">
+            <p id="timer">Redirecting in 5s..</p>
+        </div>
     </div>
 </div>

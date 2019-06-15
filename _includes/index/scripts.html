@@ -1,30 +1,28 @@
 <script>
+
     /* BEGIN Index JS */
-    const viewportResizingFixer = new ViewportResizingFixer({
+    /*const viewportResizingFixer = new ViewportResizingFixer({
         "#homePage": "height",
         ".vh-40": "height"
-    });
+    });*/
     const hiddenElementsStyler = new HiddenElementsStyler({
-        "#page2": {classes: ["shrink"], recur: false},
-        ".project-link-cnt": {classes: ["hidden"], recur: false},
-        ".background-wrapper": {classes: ["greyscale"], recur: false}
+        "#about": {classes: ["shrink"]},
+        ".container-fluid": {classes: ["greyscale"]}
     });
     /* END Index JS */
     /* BEGIN Index/Nav JS */
     const mobileDropdownCloser = new MobileDropdownCloser({
-        mainNavHeaderSelector: '#mainNavHeader',
-        mainNavButtonSelector: '#mainNavButton',
-        mainNavCollapseSelector: '#mainNavCollapse'
+        mainNavHeaderSelector: '#homeNav',
+        mainNavButtonSelector: '#homeNavButton',
+        mainNavCollapseSelector: '#homeCollapseNav'
     });
     const navbarLinksController = new NavbarLinksController({
-        paneIds: ["#homePage", "#page2", "#page3", "#page4"],
-        navbarId: "#mainNavCollapse",
-        navbarOffset: 47,
-        mobileHomeButtonSelector: "#mobileHomeButton"
+        paneIds: ["#navPage1", "#navPage2", "#navPage3", "#navPage4"],
+        navbarOffset: 56
     });
     /* END Index/Nav JS */
     /* BEGIN Index/Projects JS */
-    const projectSwitcher = new ProjectSwitcher({
+    /*const projectSwitcher = new ProjectSwitcher({
         linkContainerSelector: "#projectLinks",
         projectLinksSelector: ".project-link",
         projectIdDataName: "page-id",
@@ -36,6 +34,6 @@
         linksCntSelector: ".project-link-cnt",
         filterLinksSelector: "#project-list",
         selectedSelector: ".selected"
-    });
+    });*/
     /* END Index/Projects JS */
 </script>

@@ -1,4 +1,4 @@
 /*
- *= require global/bootstrap
- *= require global/main
+ *= require vendor/bootstrap.min
+ *= require_tree ./global
  */

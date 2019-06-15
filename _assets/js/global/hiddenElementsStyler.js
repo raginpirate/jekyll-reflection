@@ -23,13 +23,9 @@ const HiddenElementsStyler = function (opts) {
                 const offsetTop = $elem.offset().top;
                 const isPast = offsetTop < (scrollLoc + windowHeight);
                 const appendableClasses = opts[key]["classes"].join(" ");
-                if (isPast) {
-                    if (opts[key]["recur"] === true) {
-                        $invisibleElems.push({$elem: $elem, classList: appendableClasses, recur: true});
-                    }
-                } else {
+                if (!isPast) {
                     $elem.addClass(appendableClasses);
-                    $invisibleElems.push({$elem: $elem, classList: appendableClasses, recur: opts[key]["recur"]});
+                    $invisibleElems.push({$elem: $elem, classList: appendableClasses});
                 }
             });
         }
@@ -48,13 +44,11 @@ const HiddenElementsStyler = function (opts) {
             const distanceBottom = offsetTop + $elem.height() - (scrollLoc + windowHeight/2);
             const isVisible = Math.abs(distanceTop) <= windowHeight/3 || Math.abs(distanceBottom) <= windowHeight/3 || (distanceTop < 0 && distanceBottom > 0);
             if (isVisible) {
+                $elem.css("transition", "all 1s ease-in-out");
                 $elem.removeClass($invisibleElems[index].classList);
-                if (!($invisibleElems[index].recur)) {
-                    delete $invisibleElems[index];
-                    return;
-                }
-            } else if ($invisibleElems[index].recur) {
-                $elem.addClass($invisibleElems[index].classList);
+                setTimeout(function(){$elem.css("transition", "");}, 1000);
+                delete $invisibleElems[index];
+                return;
             }
         }
         if (len === 0) {
@@ -63,5 +57,6 @@ const HiddenElementsStyler = function (opts) {
     };
 
     //timeout init because of issue with page location after refresh
-    setTimeout(init, 100);
+    //setTimeout(init, 100);
+    init();
 };
