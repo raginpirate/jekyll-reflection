@@ -1,7 +1,5 @@
 include: ['_pages']
-destination: docs
-
-theme_color: "#000000"
+destination: dist
 
 plugins:
   - jekyll-assets

@@ -1,4 +1,4 @@
 /*
  *= require global
- *= require index/projects
+ *= require_tree ./index
  */

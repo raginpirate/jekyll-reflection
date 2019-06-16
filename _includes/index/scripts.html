@@ -1,30 +1,50 @@
 <script>
+
     /* BEGIN Index JS */
-    const viewportResizingFixer = new ViewportResizingFixer({
-        "#homePage": "height",
-        ".vh-40": "height"
-    });
     const hiddenElementsStyler = new HiddenElementsStyler({
-        "#page2": {classes: ["shrink"], recur: false},
-        ".project-link-cnt": {classes: ["hidden"], recur: false},
-        ".background-wrapper": {classes: ["greyscale"], recur: false}
+        ".about-background": {
+            showTrigger: function($elem){
+                if ($(window).width() > 1366) {
+                    $elem.animate({"max-width": $elem.data("width")}, {easing: "swing", duration: 1000, complete: function(){
+                            $elem.css("max-width", "");
+                        }}, );
+                } else {
+                    $elem.css("max-width", "");
+                }
+            }, hideTrigger: function($elem){
+                $elem.data("width", $elem.width());
+                $elem.css("max-width", "1366px");
+            }
+        },
+        ".container-fluid": {
+            showTrigger: function($elem){
+                let greyscaleLevel = 1;
+                let interval = setInterval(function(){
+                    greyscaleLevel -= 0.10;
+                    $elem.css("filter", "grayscale(" + greyscaleLevel + ")");
+                    if(greyscaleLevel <= 0) {
+                        clearInterval(interval);
+                    }
+                }, 50);
+            }, hideTrigger: function($elem){
+                $elem.css("filter", "grayscale(1)");
+            }
+        }
     });
     /* END Index JS */
     /* BEGIN Index/Nav JS */
     const mobileDropdownCloser = new MobileDropdownCloser({
-        mainNavHeaderSelector: '#mainNavHeader',
-        mainNavButtonSelector: '#mainNavButton',
-        mainNavCollapseSelector: '#mainNavCollapse'
+        mainNavHeaderSelector: '#homeNav',
+        mainNavButtonSelector: '#homeNavButton',
+        mainNavCollapseSelector: '#homeCollapseNav'
     });
     const navbarLinksController = new NavbarLinksController({
-        paneIds: ["#homePage", "#page2", "#page3", "#page4"],
-        navbarId: "#mainNavCollapse",
-        navbarOffset: 47,
-        mobileHomeButtonSelector: "#mobileHomeButton"
+        paneIds: ["#navPage1", "#navPage2", "#navPage3", "#navPage4"],
+        navbarOffset: 56
     });
     /* END Index/Nav JS */
     /* BEGIN Index/Projects JS */
-    const projectSwitcher = new ProjectSwitcher({
+    /*const projectSwitcher = new ProjectSwitcher({
         linkContainerSelector: "#projectLinks",
         projectLinksSelector: ".project-link",
         projectIdDataName: "page-id",
@@ -36,6 +56,6 @@
         linksCntSelector: ".project-link-cnt",
         filterLinksSelector: "#project-list",
         selectedSelector: ".selected"
-    });
+    });*/
     /* END Index/Projects JS */
 </script>

@@ -10,8 +10,6 @@
  * @param {object} [opts] - An optional hash used for setup, as described above.
  */
 const NavbarLinksController = function (opts) {
-    let $mainNavCollapse = $(opts.navbarId);
-    let $mobileHomeButton = $(opts.mobileHomeButtonSelector);
     let $window = $(window);
     let $panes = [];
     let $navLinks = [];
@@ -20,22 +18,14 @@ const NavbarLinksController = function (opts) {
     const init = function () {
         opts.paneIds.forEach(setPanes);
         $lastDisabled = $navLinks[0];
-        setInterval(checkLocation, 250);
-        $mobileHomeButton.click(function () {
-            $window.scrollTop(0);
-        });
-        if ($window.scrollTop() == 0) {
-            $("#navbar").addClass("bg-transparent");
-            $window.one("scroll click", function() {
-                $("#navbar").removeClass("bg-transparent");
-            });
-        }
+        setInterval(checkLocation, 100);
     };
 
     const setPanes = function (value, index, array) {
-        $panes.push($(value));
-        $navLinks.push($mainNavCollapse.find('#' + $panes[index].data("navId")));
-        $navLinks[index].on("click", function() {
+        $navLinks.push($(value));
+        $panes.push($($navLinks[index].attr('href')));
+        $navLinks[index].on("click", function(e) {
+            e.preventDefault();
             navigateToPane(index);
         });
     };
@@ -48,7 +38,7 @@ const NavbarLinksController = function (opts) {
             setNewDisabled($panes.length-1);
             return;
         }
-        for (let x=$panes.length-2; x>=1; x--) {
+        for (let x=$panes.length-1; x>=1; x--) {
             if (scrollLoc >= ($panes[x].offset().top - opts.navbarOffset - 10)) {
                 setNewDisabled(x);
                 return;
@@ -58,15 +48,10 @@ const NavbarLinksController = function (opts) {
     };
 
     const setNewDisabled = function (index) {
-        if ($lastDisabled != $navLinks[index]) {
-            if (index == 0) {
-                $mobileHomeButton.removeClass("show flip");
-            } else if($lastDisabled == $navLinks[0]) {
-                $mobileHomeButton.addClass("show flip");
-            }
-            $lastDisabled.removeClass("disabled");
+        if ($lastDisabled !== $navLinks[index]) {
+            $lastDisabled.removeClass("active disabled");
             $lastDisabled = $navLinks[index];
-            $lastDisabled.addClass("disabled");
+            $lastDisabled.addClass("active disabled");
         }
     };
 

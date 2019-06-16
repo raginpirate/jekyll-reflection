@@ -1,9 +1,12 @@
-<div class="home-container">
-    <div class="background-wrapper home-background" alt="" id="homePage" data-nav-id="navHomePage">
-        <div class="container-fluid text-center align-middle no-overflow-x">
-            <h1 class="slide-in-right">Daniel C. Wyckoff</h1>
-            <hr class="fade-in-delayed">
-            <p class="slide-in-left-delayed black">4B Computer Scientist | University of Waterloo</p>
+<div class="container-fluid vh-100 overflow-hidden position-relative" id="home">
+    {% include _lazy_image.html classes="absolute-background home-background fade-in-bg" alt="" lazy_images_path="home_background" %}
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center">
+            <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center">
+                <h1 class="slide-in-left">Daniel C. Wyckoff</h1>
+                <hr class="mb-4 bg-dark fade-in-hr" width="30">
+                <p class="slide-in-right">4B Computer Scientist | University of Waterloo</p>
+            </div>
         </div>
     </div>
 </div>

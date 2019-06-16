@@ -1,3 +1,10 @@
 /*
  *= require global
  */
+
+.lost-background {
+    width: 256px;
+    height: 256px;
+    margin-left: -128px;
+    margin-top: -128px;
+}

@@ -22,14 +22,9 @@ const HiddenElementsStyler = function (opts) {
                 let $elem = $(this);
                 const offsetTop = $elem.offset().top;
                 const isPast = offsetTop < (scrollLoc + windowHeight);
-                const appendableClasses = opts[key]["classes"].join(" ");
-                if (isPast) {
-                    if (opts[key]["recur"] === true) {
-                        $invisibleElems.push({$elem: $elem, classList: appendableClasses, recur: true});
-                    }
-                } else {
-                    $elem.addClass(appendableClasses);
-                    $invisibleElems.push({$elem: $elem, classList: appendableClasses, recur: opts[key]["recur"]});
+                if (!isPast) {
+                    opts[key]["hideTrigger"]($elem);
+                    $invisibleElems.push({$elem: $elem, showTrigger: opts[key]["showTrigger"]});
                 }
             });
         }
@@ -48,13 +43,9 @@ const HiddenElementsStyler = function (opts) {
             const distanceBottom = offsetTop + $elem.height() - (scrollLoc + windowHeight/2);
             const isVisible = Math.abs(distanceTop) <= windowHeight/3 || Math.abs(distanceBottom) <= windowHeight/3 || (distanceTop < 0 && distanceBottom > 0);
             if (isVisible) {
-                $elem.removeClass($invisibleElems[index].classList);
-                if (!($invisibleElems[index].recur)) {
-                    delete $invisibleElems[index];
-                    return;
-                }
-            } else if ($invisibleElems[index].recur) {
-                $elem.addClass($invisibleElems[index].classList);
+                $invisibleElems[index]["showTrigger"]($elem);
+                delete $invisibleElems[index];
+                return;
             }
         }
         if (len === 0) {
@@ -63,5 +54,6 @@ const HiddenElementsStyler = function (opts) {
     };
 
     //timeout init because of issue with page location after refresh
-    setTimeout(init, 100);
+    //setTimeout(init, 100);
+    init();
 };
