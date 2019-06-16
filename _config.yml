@@ -1,5 +1,5 @@
 include: ['_pages']
-destination: dist
+destination: docs
 
 plugins:
   - jekyll-assets
