@@ -36,10 +36,9 @@ const HiddenElementsStyler = function (opts) {
                 let $elem = $(this);
                 const offsetTop = $elem.offset().top;
                 const isPast = offsetTop < (scrollLoc + windowHeight);
-                const appendableClasses = opts[key]["classes"].join(" ");
                 if (!isPast) {
-                    $elem.addClass(appendableClasses);
-                    $invisibleElems.push({$elem: $elem, classList: appendableClasses});
+                    opts[key]["hideTrigger"]($elem);
+                    $invisibleElems.push({$elem: $elem, showTrigger: opts[key]["showTrigger"]});
                 }
             });
         }
@@ -58,9 +57,7 @@ const HiddenElementsStyler = function (opts) {
             const distanceBottom = offsetTop + $elem.height() - (scrollLoc + windowHeight/2);
             const isVisible = Math.abs(distanceTop) <= windowHeight/3 || Math.abs(distanceBottom) <= windowHeight/3 || (distanceTop < 0 && distanceBottom > 0);
             if (isVisible) {
-                $elem.css("transition", "all 1s ease-in-out");
-                $elem.removeClass($invisibleElems[index].classList);
-                setTimeout(function(){$elem.css("transition", "");}, 1000);
+                $invisibleElems[index]["showTrigger"]($elem);
                 delete $invisibleElems[index];
                 return;
             }

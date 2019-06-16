@@ -1,33 +1,21 @@
-<div class="background-wrapper slow-transition-filters projects-background" alt="" id="projects">
-    <div class="container-fluid no-overflow-x">
-        <div class="mg-row mx-0">
-            <h2 class="mg-bot text-center">PROJECTS</h2>
-            <div id="projectLinks" class="mx-3">
-                <div class="row justify-center" id="project-list">
-                    <div class="image-padding">
-                        <a href="#" data-filter="all" class="dark-link selected">All</a>
-                    </div>
-                    <div class="image-padding">
-                        <a href="#" data-filter="Process Automation" class="dark-link">Process Automation</a>
-                    </div>
-                    <div class="image-padding">
-                        <a href="#" data-filter="Concurrency" class="dark-link">Concurrency</a>
-                    </div>
-                    <div class="image-padding">
-                        <a href="#" data-filter="A.I." class="dark-link">A.I.</a>
-                    </div>
-                    <div class="image-padding">
-                        <a href="#" data-filter="Full Stack" class="dark-link">Full Stack</a>
-                    </div>
-                </div>
-                <div class="row" id="projectsRow3">
-                    {% for project in site.data.projects %}
-                        {% include index/projects/_link.html project=project %}
-                    {% endfor %}
-                </div>
-            </div>
+<div class="container-fluid" id="projects">
+    <div class="container py-5">
+        <h2 class="text-center mb-5">What I've been up to:</h2>
+        <div class="row">
             {% for project in site.data.projects %}
-                {% include index/projects/_page.html project=project %}
+                <div class="col-sm-6 col-lg-4 mb-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <a href="{{project.url}}" target="_blank" rel="noopener">
+                                <img class="mb-3" src="{% asset {{project.image_path}} @data %}">
+                            </a>
+                            <h5 class="card-title mb-1">{{ project.title }}</h5>
+                            <small class="card-text">{{ project.description }}</small>
+                            <div class="mb-3"></div>
+                            <small>{{ project.tags }}</small>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>

@@ -1,0 +1,7 @@
+.icon-link {
+    text-decoration: none !important;
+}
+
+.icon-link:hover .icon-path {
+    fill: #005cbf;
+}
