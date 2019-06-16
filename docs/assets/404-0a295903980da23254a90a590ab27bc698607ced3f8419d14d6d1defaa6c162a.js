@@ -68,8 +68,7 @@ const HiddenElementsStyler = function (opts) {
     };
 
     //timeout init because of issue with page location after refresh
-    //setTimeout(init, 100);
-    init();
+    setTimeout(init, 100);
 };
 
 
@@ -87,223 +86,24 @@ const HiddenElementsStyler = function (opts) {
  * @param {object} [opts] - An optional hash used for setup, as described above.
  */
 
-const MobileDropdownCloser = function (opts) {
-    const $mainNavHeader = $(opts.mainNavHeaderSelector);
-    const $mainNavButton = $(opts.mainNavButtonSelector);
-    const $mainNavCollapse = $(opts.mainNavCollapseSelector);
+var CountDowner = function (opts) {
+    var beforeString = opts.beforeString;
+    var afterString = opts.afterString;
+    var startingTime = opts.startingTime;
+    var $tagId = $(opts.tagIdSelector);
+    var callback = opts.callback;
+    var timer;
 
-    const init = function () {
-        $(document).bind('click touchend', tryCloseDropdown);
+    var init = function () {
+        timer = setInterval(updateDisplay, 1000);
     };
 
-    const tryCloseDropdown = function (e) {
-        const $target = $(e.target);
-        if (!($target.is($mainNavHeader) || $target.is($mainNavButton) || $mainNavButton.is('.collapsed') || ($(document).width() > 575))) {
-            $mainNavCollapse.collapse('hide');
-        }
-    };
-
-    init();
-};
-/**
- * THIS NEEDS REAL COMMENTS
- *
- * Construct with the following hash:
- * {string} checkboxSelector, selector for the checkbox which dictates state of fields
- * {string} endDateSelector, selector for theme field to disable/enable
- * {string} endTimeSelector, selector for theme field to disable/enable
- * {string} endThemeSelector, selector for theme field to disable/enable
- *
- * @param {object} [opts] - An optional hash used for setup, as described above.
- */
-
-const NavbarLinksController = function (opts) {
-    let $window = $(window);
-    let $panes = [];
-    let $navLinks = [];
-    let $lastDisabled;
-
-    const init = function () {
-        opts.paneIds.forEach(setPanes);
-        $lastDisabled = $navLinks[0];
-        setInterval(checkLocation, 100);
-    };
-
-    const setPanes = function (value, index, array) {
-        $navLinks.push($(value));
-        $panes.push($($navLinks[index].attr('href')));
-        $navLinks[index].on("click", function(e) {
-            e.preventDefault();
-            navigateToPane(index);
-        });
-    };
-
-    const checkLocation = function (e) {
-        const windowHeight = $window.height();
-        const scrollLoc = $window.scrollTop();
-
-        if ((windowHeight + scrollLoc) >= $(document).height() - 10) {
-            setNewDisabled($panes.length-1);
-            return;
-        }
-        for (let x=$panes.length-1; x>=1; x--) {
-            if (scrollLoc >= ($panes[x].offset().top - opts.navbarOffset - 10)) {
-                setNewDisabled(x);
-                return;
-            }
-        }
-        setNewDisabled(0);
-    };
-
-    const setNewDisabled = function (index) {
-        if ($lastDisabled !== $navLinks[index]) {
-            $lastDisabled.removeClass("active disabled");
-            $lastDisabled = $navLinks[index];
-            $lastDisabled.addClass("active disabled");
-        }
-    };
-
-    const navigateToPane = function (index) {
-        if ($window.width() >= 576) {
-            $('html, body').animate({
-                scrollTop: ($panes[index].offset().top - opts.navbarOffset)
-            }, 1000);
-        } else {
-            $window.scrollTop($panes[index].offset().top - opts.navbarOffset);
-        }
-
-    };
-
-    init();
-};
-/**
- * THIS NEEDS REAL COMMENTS
- *
- * Construct with the following hash:
- * {string} checkboxSelector, selector for the checkbox which dictates state of fields
- * {string} endDateSelector, selector for theme field to disable/enable
- * {string} endTimeSelector, selector for theme field to disable/enable
- * {string} endThemeSelector, selector for theme field to disable/enable
- *
- * @param {object} [opts] - An optional hash used for setup, as described above.
- */
-
-const ProjectFilterer = function (opts) {
-    let $linksContainer = $(opts.linksCntSelector);
-    let $lastSelected = $(opts.selectedSelector);
-
-    const init = function () {
-        $(opts.filterLinksSelector).find("div a").each(function () {
-            let $elem = $(this);
-            $elem.click(function (e) {
-                e.preventDefault();
-                $lastSelected.removeClass("selected");
-                $(this).addClass("selected");
-                $lastSelected = $(this);
-                let tagFilter = $(this).data("filter");
-                if (tagFilter == "all") {
-                    $linksContainer.each(function () {
-                        let $e = $(this);
-                        $e.css("opacity", 0);
-                        setTimeout(function(){ $e.show().css("opacity", 1); }, 400);
-                    });
-                } else {
-                    $linksContainer.each(function () {
-                        let projectTags = $($(this).find(".link-tags")[0]).text();
-                        let $e = $(this);
-                        if (projectTags.indexOf(tagFilter) >= 0) {
-                            $e.css("opacity", 0);
-                            setTimeout(function(){ $e.show().css("opacity", 1); }, 400);
-                        } else {
-                            $e.css("opacity", 0);
-                            setTimeout(function(){ $e.hide(); }, 400);
-                        }
-                    });
-                }
-            });
-        });
-    };
-
-    init();
-};
-/**
- * THIS NEEDS REAL COMMENTS
- *
- * Construct with the following hash:
- * {string} checkboxSelector, selector for the checkbox which dictates state of fields
- * {string} endDateSelector, selector for theme field to disable/enable
- * {string} endTimeSelector, selector for theme field to disable/enable
- * {string} endThemeSelector, selector for theme field to disable/enable
- *
- * @param {object} [opts] - An optional hash used for setup, as described above.
- */
-
-const ProjectSwitcher = function (opts) {
-    let $linkContainer = $(opts.linkContainerSelector);
-    let $window = $(window);
-    let $page = $('html, body');
-    let notMobile = $window.width() >= 576;
-    let projectDataName = opts.projectIdDataName;
-    let $topContainer = $(opts.topContainerSelector);
-    let $curElem;
-    let lastScrollLoc;
-
-    const init = function() {
-        $linkContainer.find(opts.projectLinksSelector).each(function () {
-            $(this).click(setVisiblePage);
-            const $projectPage = $("#" + $(this).data(projectDataName));
-            $projectPage.find(opts.btmResetBtnSelector).click(btmReset);
-            $projectPage.find(opts.topResetBtnSelector).click(topReset);
-        });
-    };
-
-    const setVisiblePage = function(e) {
-        e.preventDefault();
-        if ($linkContainer.css('overflow') !== 'hidden' && $linkContainer.css('display') !== 'none') {
-            lastScrollLoc = $window.scrollTop();
-            $curElem = $("#" + $(this).data(projectDataName));
-            if(notMobile) {
-                $page.animate({
-                    scrollTop: ($topContainer.offset().top - 47)
-                }, 1000);
-                e.preventDefault();
-                $linkContainer.slideUp(1000);
-                $curElem.slideDown(1000);
-            } else {
-                $linkContainer.hide();
-                $curElem.fadeIn(1500);
-                $window.scrollTop($topContainer.offset().top - 47);
-            }
-        }
-    };
-
-    const topReset = function(e) {
-        e.preventDefault();
-        if(notMobile) {
-            $page.animate({
-                scrollTop: lastScrollLoc
-            }, 1000);
-            $curElem.slideUp();
-            $linkContainer.slideDown();
-        } else {
-            $curElem.hide();
-            $linkContainer.fadeIn(1500);
-            $window.scrollTop(lastScrollLoc);
-        }
-    };
-
-    const btmReset = function(e) {
-        e.preventDefault();
-        if(notMobile) {
-            $page.animate({
-                scrollTop: lastScrollLoc
-            }, 1000);
-            $curElem.slideUp(1000);
-            $linkContainer.slideDown(1000);
-        } else {
-            $curElem.hide();
-            $linkContainer.fadeIn(1500);
-            $window.scrollTop(lastScrollLoc);
+    var updateDisplay = function () {
+        startingTime--;
+        $tagId.text(beforeString + startingTime + afterString);
+        if (startingTime<=0) {
+            callback();
+            clearInterval(timer);
         }
     };
 

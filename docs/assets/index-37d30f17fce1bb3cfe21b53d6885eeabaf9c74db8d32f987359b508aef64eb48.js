@@ -68,8 +68,7 @@ const HiddenElementsStyler = function (opts) {
     };
 
     //timeout init because of issue with page location after refresh
-    //setTimeout(init, 100);
-    init();
+    setTimeout(init, 100);
 };
 
 

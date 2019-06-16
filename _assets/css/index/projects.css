@@ -1,0 +1,12 @@
+.card:hover {
+    animation: highlight-shadow 0.2s forwards;
+}
+
+@keyframes highlight-shadow {
+    from {
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    }
+    to {
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    }
+}

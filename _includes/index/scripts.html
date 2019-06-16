@@ -29,6 +29,22 @@
             }, hideTrigger: function($elem){
                 $elem.css("filter", "grayscale(1)");
             }
+        },
+        ".card": {
+            showTrigger: function($elem){
+                let greyscaleLevel = 1;
+                $elem.animate({opacity: 1}, 500);
+                let interval = setInterval(function(){
+                    greyscaleLevel -= 0.05;
+                    $elem.css("filter", "grayscale(" + greyscaleLevel + ")");
+                    if(greyscaleLevel <= 0) {
+                        clearInterval(interval);
+                    }
+                }, 50);
+            }, hideTrigger: function($elem){
+                $elem.css("filter", "grayscale(1)");
+                $elem.css("opacity", "0");
+            }
         }
     });
     /* END Index JS */
