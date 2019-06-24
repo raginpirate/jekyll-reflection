@@ -98,6 +98,18 @@
     transition-duration: 0.8s;
     transform: rotate(180deg);
 }
+
+.navbar-light .navbar-nav .nav-link {
+    color: #757575;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: black;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: black;
+}
 /*
 
 

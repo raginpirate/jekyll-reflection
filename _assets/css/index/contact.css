@@ -5,3 +5,7 @@
 .icon-link:hover .icon-path {
     fill: #005cbf;
 }
+
+.link-on-dark {
+    color: #057FFF;
+}
