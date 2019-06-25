@@ -5,7 +5,7 @@
     margin-top: -450px;
 }
 
-.slide-in-left {
+/*.slide-in-left {
     white-space: nowrap;
     opacity: 0;
     animation: slide-in-left 2s forwards;
@@ -28,7 +28,7 @@
     opacity: 0;
     animation: fade-in 2s forwards;
     animation-delay: 2s;
-}
+}*/
 
 @keyframes slide-in-left {
     from {
