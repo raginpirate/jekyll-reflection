@@ -7,7 +7,7 @@
                 if ($(window).width() > 1366) {
                     $elem.animate({"max-width": $elem.data("width")}, {easing: "swing", duration: 1000, complete: function(){
                             $elem.css("max-width", "");
-                        }}, );
+                        }});
                 } else {
                     $elem.css("max-width", "");
                 }
@@ -23,6 +23,7 @@
                     greyscaleLevel -= 0.10;
                     $elem.css("filter", "grayscale(" + greyscaleLevel + ")");
                     if(greyscaleLevel <= 0) {
+                        $elem.css("filter", "");
                         clearInterval(interval);
                     }
                 }, 50);
@@ -33,11 +34,12 @@
         ".card": {
             showTrigger: function($elem){
                 let greyscaleLevel = 1;
-                $elem.animate({opacity: 1}, 500);
+                $elem.animate({opacity: 1}, 250);
                 let interval = setInterval(function(){
-                    greyscaleLevel -= 0.05;
+                    greyscaleLevel -= 0.10;
                     $elem.css("filter", "grayscale(" + greyscaleLevel + ")");
                     if(greyscaleLevel <= 0) {
+                        $elem.css("filter", "");
                         clearInterval(interval);
                     }
                 }, 50);

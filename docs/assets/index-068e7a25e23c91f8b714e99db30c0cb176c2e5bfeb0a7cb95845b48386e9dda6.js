@@ -42,7 +42,7 @@ const HiddenElementsStyler = function (opts) {
                 }
             });
         }
-        interval = setInterval(checkTrigger, 250);
+        interval = setInterval(checkTrigger, 200);
     };
 
     const checkTrigger = function () {
@@ -53,10 +53,8 @@ const HiddenElementsStyler = function (opts) {
             len++;
             let $elem = $invisibleElems[index].$elem;
             const offsetTop = $elem.offset().top;
-            const distanceTop = offsetTop - (scrollLoc + windowHeight/2);
-            const distanceBottom = offsetTop + $elem.height() - (scrollLoc + windowHeight/2);
-            const isVisible = Math.abs(distanceTop) <= windowHeight/3 || Math.abs(distanceBottom) <= windowHeight/3 || (distanceTop < 0 && distanceBottom > 0);
-            if (isVisible) {
+            const isPast = offsetTop < (scrollLoc + windowHeight);
+            if (isPast) {
                 $invisibleElems[index]["showTrigger"]($elem);
                 delete $invisibleElems[index];
                 return;
@@ -67,8 +65,8 @@ const HiddenElementsStyler = function (opts) {
         }
     };
 
-    //timeout init because of issue with page location after refresh
-    setTimeout(init, 100);
+    //timeout init to wait for page location to settle down (hoping to an ID anchor for example)
+    setTimeout(init, 250);
 };
 
 

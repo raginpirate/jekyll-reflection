@@ -6,7 +6,13 @@ Engineering with an interest in AI and Process automation.">
     <meta name="author" content="">
     <meta http-equiv="Content-Type" content="text/html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <title>{{ page.title }} - Daniel Wyckoff</title>
-    <link rel="icon" href="{% asset favicon.png @data %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% asset 'apple-touch-icon.png' @path %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% asset 'favicon-32x32.png' @path %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% asset 'favicon-16x16.png' @path %}">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="{% asset 'safari-pinned-tab.svg' @path %}" color="#5bbad5">
     {{ page.name | replace: ".html", ".css" | asset }}
 </head>
