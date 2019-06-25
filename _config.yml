@@ -3,3 +3,7 @@ destination: docs
 
 plugins:
   - jekyll-assets
+
+assets:
+  sources:
+    - _assets

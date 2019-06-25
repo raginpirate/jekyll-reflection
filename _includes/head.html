@@ -7,12 +7,14 @@ Engineering with an interest in AI and Process automation.">
     <meta http-equiv="Content-Type" content="text/html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="{% asset 'browserconfig.xml' @path %}" />
     <meta name="theme-color" content="#ffffff">
     <title>{{ page.title }} - Daniel Wyckoff</title>
-    <link rel="apple-touch-icon" sizes="60x60" href="{% asset 'apple-touch-icon.png' @path %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% asset 'favicon-32x32.png' @path %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% asset 'favicon-16x16.png' @path %}">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="{% asset 'safari-pinned-tab.svg' @path %}" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% asset 'global/favicon/apple-touch-icon.png' @path %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% asset 'global/favicon/favicon-32x32.png' @path %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% asset 'global/favicon/favicon-16x16.png' @path %}">
+    <link rel="manifest" href="{% asset 'site.webmanifest' @path %}">
+    <link rel="mask-icon" href="{% asset 'global/favicon/safari-pinned-tab.svg' @path %}" color="#5bbad5">
     {{ page.name | replace: ".html", ".css" | asset }}
+    <script type="text/javascript" src="{% asset '{{ page.name | replace: ".html", ".js" }}' @path %}" defer></script>
 </head>

@@ -3,7 +3,5 @@
 {% include head.html %}
 <body>
 {{ content }}
-{{ page.name | replace: ".html", ".js" | asset }}
-{% include {{ page.name | replace: ".html", "/scripts.html" }} %}
 </body>
 </html>
