@@ -7,6 +7,6 @@ var countDowner = new CountDowner({
     startingTime: 5,
     tagIdSelector: "#timer",
     callback: function() {
-        window.location.pathname = "{{ site.baseurl }}";
+        window.location.pathname = "/";
     }
 });
