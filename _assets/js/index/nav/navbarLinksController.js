@@ -18,12 +18,13 @@ const NavbarLinksController = function (opts) {
     const init = function () {
         opts.paneIds.forEach(setPanes);
         $lastDisabled = $navLinks[0];
+        $lastDisabled.addClass("active disabled");
         setInterval(checkLocation, 100);
     };
 
     const setPanes = function (value, index, array) {
         $navLinks.push($(value));
-        $panes.push($($navLinks[index].attr('href')));
+        $panes.push($($navLinks[index].attr('href').substring(1)));
         $navLinks[index].on("click", function(e) {
             e.preventDefault();
             navigateToPane(index);
