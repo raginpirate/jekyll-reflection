@@ -7,5 +7,3 @@ plugins:
 assets:
   sources:
     - _assets
-
-newbaseurl: /
