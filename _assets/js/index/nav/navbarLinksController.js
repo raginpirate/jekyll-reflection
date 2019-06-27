@@ -17,8 +17,8 @@ const NavbarLinksController = function (opts) {
 
     const init = function () {
         opts.paneIds.forEach(setPanes);
-        $lastDisabled = $navLinks[0];
-        $lastDisabled.addClass("active disabled");
+        $lastDisabled = $(null);
+        checkLocation();
         setInterval(checkLocation, 100);
     };
 
