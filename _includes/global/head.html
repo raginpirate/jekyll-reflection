@@ -1,22 +1,28 @@
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="4B Computer Scientist at the University of Waterloo. Currently a Full Stack Engineer with interests in AI and Concurrency.">
-    <meta name="keywords" content="Daniel,Wyckoff,HTML,CSS,JavaScript,Resume,Waterloo,FullStack,AI,Concurrency">
-    <meta name="author" content="">
     <meta http-equiv="Content-Type" content="text/html">
+
+    <title>{{ page.title }} - {{ site.data.theme.author }}</title>
+
+    <meta name="description" content="{{ site.data.theme.description }}">
+    <meta name="keywords" content="{{ site.data.theme.keywords }}">
+    <meta name="author" content="{{ site.data.theme.author }}">
+    <meta name="theme-color" content="{{ site.data.theme_color }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Check Out My Online Résumé" />
-    <meta property="og:site_name" content="danielwyckoff.ca" />
-    <meta property="og:image" content="{% asset 'global/favicon/og-image.png' @path %}" />
-    <meta name="msapplication-TileColor" content="#9f00a7">
+
+    <meta name="msapplication-TileColor" content="{{ site.data.tile_color }}">
     <meta name="msapplication-config" content="{% asset 'browserconfig.xml' @path %}" />
-    <meta name="theme-color" content="#ffffff">
-    <title>{{ page.title }} - Daniel Wyckoff</title>
+
+    <meta property="og:title" content="{{ site.data.theme.og_title }}" />
+    <meta property="og:site_name" content="{{ site.data.theme.og_site_name }}" />
+    <meta property="og:image" content="{% asset 'global/favicon/og-image.png' @path %}" />
+
     <link rel="apple-touch-icon" sizes="180x180" href="{% asset 'global/favicon/apple-touch-icon.png' @path %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% asset 'global/favicon/favicon-32x32.png' @path %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% asset 'global/favicon/favicon-16x16.png' @path %}">
+    <link rel="mask-icon" href="{% asset 'global/favicon/safari-pinned-tab.svg' @path %}" color="{{ site.data.mask_color }}">
     <link rel="manifest" href="{% asset 'site.webmanifest' @path %}">
-    <link rel="mask-icon" href="{% asset 'global/favicon/safari-pinned-tab.svg' @path %}" color="#5bbad5">
+
     {{ page.name | replace: ".html", ".css" | asset }}
     <script type="text/javascript" src="{% asset '{{ page.name | replace: ".html", ".js" }}' @path %}" defer></script>
 </head>

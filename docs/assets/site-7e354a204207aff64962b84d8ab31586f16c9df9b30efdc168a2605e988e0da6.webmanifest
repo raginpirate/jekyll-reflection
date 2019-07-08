@@ -1,6 +1,6 @@
 {
-    "name": "danielwyckoff.ca",
-    "short_name": "Wyckoff",
+    "name": danielwyckoff.ca,
+    "short_name": Wyckoff,
     "icons": [
         {
             "src": "/assets/img/global/favicon/android-chrome-192x192-190be19c78718c3d3aa48ad958113b36fa553da084b596ad11b1fce249229614.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": #ffffff,
+    "background_color": #ffffff,
     "display": "standalone"
 }
