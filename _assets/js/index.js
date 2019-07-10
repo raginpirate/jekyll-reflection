@@ -59,3 +59,8 @@ const navbarLinksController = new NavbarLinksController({
     paneIds: ["#navPage1", "#navPage2", "#navPage3", "#navPage4"],
     navbarOffset: 56
 });
+
+if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register("/service_worker.js");
+}
