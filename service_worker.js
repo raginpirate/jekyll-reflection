@@ -1,23 +1,40 @@
-importScripts("/assets/js/vendor/workbox/workbox-sw.js");
-workbox.setConfig({
-    modulePathPrefix: '/assets/js/vendor/workbox'
+self.addEventListener('fetch', function(event) {
+    if (event.request.url.endsWith("/") || event.request.url.endsWith(".html")) {
+        event.respondWith(fetch(event.request).then(function(fetchResponse) {
+            if (badResponse(fetchResponse)) {
+                caches.match(event.request).then(function(cachedResponse) {
+                    if (cachedResponse) {
+                        return cachedResponse;
+                    }
+                    return fetchResponse;
+                });
+            }
+            return cacheAndClone(event.request, fetchResponse);
+        }));
+    } else {
+        event.respondWith(caches.match(event.request).then(function(cachedResponse) {
+            if (cachedResponse) {
+                return cachedResponse;
+            }
+            return fetch(event.request).then(function(fetchResponse) {
+                if (badResponse(fetchResponse)) {
+                    return fetchResponse;
+                }
+                return cacheAndClone(event.request, fetchResponse);
+            });
+        }));
+    }
 });
 
-workbox.routing.registerRoute(
-  /\.(?:png|webp|svg|js|webmanifest)$/,
-  new workbox.strategies.CacheFirst({
-    cacheName: 'jekyll-reflection'
-  })
-);
+var badResponse = function(fetchData) {
+    return !fetchData || fetchData.status !== 200 || fetchData.type !== 'basic'
+};
 
-workbox.routing.registerRoute(
-  /\.(?:html|pdf)$/,
-  new workbox.strategies.NetworkFirst({
-    cacheName: 'html-cache',
-  })
-);
-
-workbox.precaching.precacheAndRoute([
-    '/index.html',
-    '/404.html'
-]);
+var cacheAndClone = function(key, response) {
+    var responseToCache = response.clone();
+    caches.open("Jekyll-Reflection")
+        .then(function(cache) {
+            cache.put(key, responseToCache);
+        });
+    return response;
+};
