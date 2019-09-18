@@ -1,0 +1,31 @@
+<div id="homeNav" class="fixed-top bg-white shadow-sm">
+    <nav class="navbar navbar-expand-sm navbar-light nav-width">
+        <a class="navbar-brand" href="#">
+            <img src="{% asset global/favicon/favicon-32x32.png @data %}" class="d-inline-block align-top" alt="" width="30" height="30">
+            Daniel Wyckoff
+        </a>
+        <button id="homeNavButton" class="navbar-toggler border-0 collapsed" type="button" data-toggle="collapse" data-target="#homeCollapseNav" aria-controls="homeCollapseNav" aria-expanded="false" aria-label="Toggle navigation">
+            <img class="navbar-icon" src="{% asset global/chevron-down-solid.svg @data %}" width="20" height="20" alt="Menu Button">
+        </button>
+
+        <div class="collapse navbar-collapse" id="homeCollapseNav">
+            <ul class="navbar-nav ml-auto mt-2 mt-sm-0 mb-2 mb-sm-0">
+                <li class="nav-item mx-4 mx-sm-0">
+                    <a class="nav-link" href="/#home" id="navPage1">Home</a>
+                </li>
+                <li class="nav-item mx-4 mx-sm-0">
+                    <a class="nav-link" href="/#about" id="navPage2">About</a>
+                </li>
+                <li class="nav-item mx-4 mx-sm-0">
+                    <a class="nav-link" href="/#projects" id="navPage3">Projects</a>
+                </li>
+                <li class="nav-item mx-4 mx-sm-0">
+                    <a class="nav-link" href="/#contact" id="navPage4">Contact</a>
+                </li>
+                <li class="nav-item mx-4 ml-sm-4 mr-sm-0 border-0">
+                    <a class="nav-link" href="{% asset 'Daniel Wyckoff Resume.pdf' @path %}" target="_blank" rel="noopener">Résumé</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

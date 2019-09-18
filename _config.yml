@@ -1,5 +1,12 @@
 include: ['_pages']
-destination: dist
+destination: docs
 
 plugins:
   - jekyll-assets
+
+assets:
+  raw_precompile: [
+    _assets/js/vendor/workbox
+  ]
+  sources:
+    - _assets

@@ -5,3 +5,12 @@
 .icon-link:hover .icon-path {
     fill: #005cbf;
 }
+
+.link-on-dark {
+    color: #057FFF;
+}
+
+#contact {
+    background-color: #151a2b;
+    color: white;
+}

@@ -10,5 +10,10 @@
 }
 
 .headshot-column {
-    max-width: 400px;
+    max-width: 350px;
+}
+
+#about {
+    color: white;
+    position: relative;
 }

@@ -1,4 +1,4 @@
-<div class="container-fluid" id="about" style="color: white; position: relative;">
+<div class="container-fluid" id="about">
     <div class="absolute-background about-background"></div>
     <div class="container py-5">
         <div class="row">
@@ -11,15 +11,11 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                {% include _lazy_image.html classes="rounded mx-auto d-block w-100 p1 mb-5 headshot-column" alt="Professional Headshot" lazy_images_path="index/skills/headshot" %}
-                <h2>PROCESS AUTOMATION</h2>
-                <p>A differential grasses the holiday. The cylinder participates in a native. A potato cracks the mathematics after the recreational face. In a dreamed peer discriminates a depressed case. When can the poetic executive ward my disabling screen?</p>
-                <h2>A.I.</h2>
-                <p>A differential grasses the holiday. The cylinder participates in a native. A potato cracks the mathematics after the recreational face. In a dreamed peer discriminates a depressed case. When can the poetic executive ward my disabling screen?</p>
-                <h2>CONCURRENCY</h2>
-                <p>A differential grasses the holiday. The cylinder participates in a native. A potato cracks the mathematics after the recreational face. In a dreamed peer discriminates a depressed case. When can the poetic executive ward my disabling screen?</p>
-                <h2>FULL STACK</h2>
-                <p>A differential grasses the holiday. The cylinder participates in a native. A potato cracks the mathematics after the recreational face. In a dreamed peer discriminates a depressed case. When can the poetic executive ward my disabling screen?</p>
+                {% include global/_lazy_image.html classes="rounded mx-auto d-block w-100 p1 mb-5 headshot-column" alt="Professional Headshot" lazy_image_path="index/about/headshot.png" %}
+                {% for category in site.data.about %}
+                    <h2>{{ category.title }}</h2>
+                    <p>{{ category.discussion }}</p>
+                {% endfor %}
             </div>
         </div>
     </div>

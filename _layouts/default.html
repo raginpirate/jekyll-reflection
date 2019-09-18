@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-CA">
-{% include head.html %}
+{% include global/head.html %}
 <body>
+{% include global/nav.html %}
 {{ content }}
-{{ page.name | replace: ".html", ".js" | asset }}
-{% include {{ page.name | replace: ".html", "/scripts.html" }} %}
 </body>
 </html>

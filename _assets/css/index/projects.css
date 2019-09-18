@@ -1,0 +1,29 @@
+.card:hover {
+    animation: highlight-shadow 0.2s forwards;
+}
+
+@keyframes highlight-shadow {
+    from {
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    }
+    to {
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    }
+}
+
+.project-link {
+    position: absolute;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.project-link:hover {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.project-nested-link {
+    position:relative;
+    z-index: 1;
+}

@@ -4,3 +4,11 @@
     left: 50%;
     z-index: -1;
 }
+
+a {
+    color: #0072F0;
+}
+
+.vh-25 {
+    height: 25vh;
+}

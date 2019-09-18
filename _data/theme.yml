@@ -1,0 +1,12 @@
+tile_color: "#9f00a7"
+theme_color: "#ffffff"
+background_color: "#ffffff"
+mask_color: "#5bbad5"
+name: "danielwyckoff.ca"
+short_name: "Wyckoff"
+
+description: "4B Computer Scientist at the University of Waterloo. Currently a Full Stack Engineer with interests in AI and Concurrency."
+keywords: "Daniel,Wyckoff,HTML,CSS,JavaScript,Resume,Waterloo,FullStack,AI,Concurrency"
+author: "Daniel Wyckoff"
+og_title: "Check Out My Online Résumé"
+og_site_name: "danielwyckoff.ca"
