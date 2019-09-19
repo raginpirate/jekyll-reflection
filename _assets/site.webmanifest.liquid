@@ -1,6 +1,6 @@
 {
-    "name": "{{ site.data.theme.name }}",
-    "short_name": "{{ site.data.theme.short_name }}",
+    "name": "{{ site.data.theme.pwa_name }}",
+    "short_name": "{{ site.data.theme.pwa_short_name }}",
     "icons": [
         {
             "src": "{% asset 'global/favicon/android-chrome-192x192.png' @path %}",
@@ -13,8 +13,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "{{ site.data.theme.theme_color }}",
-    "background_color": "{{ site.data.theme.background_color }}",
+    "theme_color": "{{ site.data.theme.pwa_theme_color }}",
+    "background_color": "{{ site.data.theme.pwa_background_color }}",
     "display": "standalone",
     "start_url": "/"
 }
