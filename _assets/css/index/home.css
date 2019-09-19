@@ -25,7 +25,6 @@
 }
 
 .fade-in-hr {
-    width: 30px;
     opacity: 0;
     animation: fade-in 2s forwards;
     animation-delay: 2s;
