@@ -12,3 +12,7 @@ a {
 .vh-25 {
     height: 25vh;
 }
+
+.short-hr {
+    width: 30px;
+}

@@ -5,9 +5,9 @@
             {% for project in site.data.projects reversed %}
                 <div class="col-sm-6 col-lg-4 mb-3">
                     <div class="card h-100 shadow-sm">
-                        <a href="{{project.url}}" target="_blank" rel="noopener" class="project-link" data-toggle='tooltip' title='{{ project.title }}'></a>
+                        <a href="{{ project.url }}" target="_blank" rel="noopener" class="project-link" data-toggle='tooltip' title='{{ project.title }}'></a>
                         <div class="card-body text-center">
-                            <img class="mb-3" width="48" src="{% asset {{project.image_path}} @data %}" alt="{{project.title}} Icon">
+                            <img class="mb-3" width="48" src="{% asset {{project.image_path}} @data %}" alt="{{ project.title }} Icon">
                             <h5 class="card-title mb-1">{{ project.title }}</h5>
                             <small class="card-text">{{ project.description }}</small>
                             <div class="mb-3"></div>

@@ -56,7 +56,7 @@ const mobileDropdownCloser = new MobileDropdownCloser({
     mainNavCollapseSelector: '#homeCollapseNav'
 });
 const navbarLinksController = new NavbarLinksController({
-    paneIds: ["#navPage1", "#navPage2", "#navPage3", "#navPage4"],
+    paneIds: ["#navToHome", "#navPage1", "#navPage2", "#navPage3", "#navPage4"],
     navbarOffset: 56
 });
 
