@@ -14,4 +14,6 @@ Background image css files need manual modification when someone edits the jekyl
 \
 Get service worker to cache everything on the very first page load with no overhead\
 \
-PWA base theme coloring
+PWA base theme coloring\
+\
+Bugfix about section shrinking instead of expanding sometimes
