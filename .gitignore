@@ -1,9 +1,4 @@
-.sass-cache
-.jekyll-metadata
-.idea
-.asset-cache
 .jekyll-cache
-Gemfile.lock
 .ruby-version
-/CNAME
+Gemfile.lock
 /docs

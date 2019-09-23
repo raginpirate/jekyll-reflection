@@ -1,8 +1,5 @@
 self.addEventListener('fetch', function(event) {
-    if (event.request.url.endsWith("/")) {
-        event.request.url = event.request.url.substring(0, event.request.url.length - 1) + ".html";
-    }
-    if (event.request.url.endsWith(".html")) {
+    if (event.request.url.endsWith(".html") || event.request.url.endsWith("/")) {
         event.respondWith(fetch(event.request).then(function(fetchResponse) {
             if (badResponse(fetchResponse)) {
                 caches.match(event.request).then(function(cachedResponse) {

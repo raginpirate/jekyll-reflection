@@ -1,0 +1,53 @@
+/* Page specific styling */
+
+.absolute-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+}
+
+.vh-25 {
+    height: 25vh;
+}
+
+.short-hr {
+    width: 30px;
+}
+
+/* Theme coloring */
+
+a {
+    color: {{ site.data.theme.theme_primary_link_color }};
+}
+
+a:hover {
+    color: {{ site.data.theme.theme_primary_link_color }};
+    opacity: 0.8;
+}
+
+body, .bg-theme-primary {
+    color: {{ site.data.theme.theme_primary_text_color }};
+    background-color: {{ site.data.theme.theme_primary_background_color }};
+}
+
+.card {
+    background-color: {{ site.data.theme.theme_primary_background_color }};
+}
+
+.bg-theme-secondary a {
+    color: {{ site.data.theme.theme_secondary_link_color }};
+}
+
+.bg-theme-secondary a:hover {
+    color: {{ site.data.theme.theme_secondary_link_color }};
+}
+
+.bg-theme-secondary {
+    color: {{ site.data.theme.theme_secondary_text_color }};
+    background-color: {{ site.data.theme.theme_secondary_background_color }};
+}
+
+.bg-theme-secondary .card {
+    background-color: {{ site.data.theme.theme_secondary_background_color }};
+}
