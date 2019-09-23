@@ -1,9 +1,14 @@
+/* Page specific styling */
+
+/* TODO: THIS IS ANNOYINGLY HARD-CODED */
 .home-background {
     width: 600px;
     height: 670px;
-    margin-left: -300px;
+    margin-left: -301px;
     margin-top: -335px;
 }
+
+/* Animations */
 
 .slide-in-left {
     white-space: nowrap;

@@ -1,0 +1,50 @@
+/* Page specific styling */
+
+.nav-width {
+    max-width: 980px;
+    margin: auto;
+}
+
+@media (max-width: 575px) {
+    .nav-item {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(0,0,0,0.1);
+    }
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-nav .nav-link:hover {
+    opacity: 1;
+}
+
+.navbar-nav .nav-link.active {
+    opacity: 1;
+    font-weight: 600;
+}
+
+/* Animations*/
+
+.navbar-icon {
+    transition-duration: 0.8s;
+    transform: rotate(180deg);
+}
+
+.collapsed .navbar-icon {
+    transform: rotate(0deg);
+}
+
+/* Theme coloring */
+
+.navbar-brand, .navbar-brand:hover {
+    color: {{ site.data.theme.theme_primary_text_color }};
+    opacity: 1;
+}
+
+.navbar-nav .nav-link {
+    color: {{ site.data.theme.theme_primary_text_color }};
+    opacity: 0.75;
+}
