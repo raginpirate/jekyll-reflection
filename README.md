@@ -16,4 +16,6 @@ Get service worker to cache everything on the very first page load with no overh
 \
 PWA base theme coloring\
 \
-Bugfix about section shrinking instead of expanding sometimes
+Bugfix about section shrinking instead of expanding sometimes\
+\
+Make service worker throw out old cached files somehow (some kind of regex possible perhaps?)
