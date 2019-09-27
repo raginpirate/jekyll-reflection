@@ -4,8 +4,9 @@ $(document).ready(function() {
     const hiddenElementsStyler = new HiddenElementsStyler({
         "#aboutBackground": {
             showTrigger: function ($elem) {
-                if ($(window).width() > 1366) {
-                    $elem.animate({"max-width": $elem.data("width")}, {
+                let windowWidth = $(window).width();
+                if (windowWidth > 1366) {
+                    $elem.animate({"max-width": windowWidth}, {
                         easing: "swing", duration: 1000, complete: function () {
                             $elem.css("max-width", "");
                         }
@@ -14,7 +15,6 @@ $(document).ready(function() {
                     $elem.css("max-width", "");
                 }
             }, hideTrigger: function ($elem) {
-                $elem.data("width", $elem.width());
                 $elem.css("max-width", "1366px");
             }
         },
