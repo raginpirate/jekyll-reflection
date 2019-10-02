@@ -23,7 +23,8 @@
     <link rel="mask-icon" href="{% asset 'global/favicon/safari-pinned-tab.svg' @path %}" color="{{ site.data.theme.pwa_mask_color }}">
     <link rel="manifest" href="{% asset 'site.webmanifest' @path %}">
 
+    {% asset global.css %}
     {% asset '{{ page.name | replace: ".html", ".css" }}' %}
-
-    <script type="text/javascript" src="{% asset '{{ page.name | replace: ".html", ".js" }}' @path %}" async defer></script>
+    {% asset global.js defer %}
+    {% asset '{{ page.name | replace: ".html", ".js" }}' defer %}
 </head>

@@ -40,12 +40,12 @@ self.addEventListener('fetch', function(event) {
     }
 });
 
-var badResponse = function(fetchData) {
+const badResponse = function(fetchData) {
     return !fetchData || fetchData.status !== 200 || fetchData.type !== 'basic'
 };
 
-var cacheAndClone = function(key, response) {
-    var responseToCache = response.clone();
+const cacheAndClone = function(key, response) {
+    let responseToCache = response.clone();
     caches.open("Jekyll-Reflection")
         .then(function(cache) {
             cache.put(key, responseToCache);
@@ -53,7 +53,7 @@ var cacheAndClone = function(key, response) {
     return response;
 };
 
-var stripUrl = function(url) {
+const stripUrl = function(url) {
     // Remove query params / id targets
     let strippedUrl = url.split("?")[0].split("#")[0];
     // Compress running slashes
@@ -69,7 +69,7 @@ var stripUrl = function(url) {
     return strippedUrl;
 };
 
-var digestFreeUrl = function(url) {
+const digestFreeUrl = function(url) {
     // Eliminate asset digest token
-    return url.replace(/(-[^.]*\.)(?!.*-[^.]*\.)/, ".");
+    return url.replace(/(-[^-.]*\.)(?!.*-[^-.]*\.)/, ".");
 };

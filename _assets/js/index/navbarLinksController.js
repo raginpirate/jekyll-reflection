@@ -19,7 +19,8 @@ const NavbarLinksController = function (opts) {
         opts.paneIds.forEach(setPanes);
         $lastDisabled = $(null);
         checkLocation();
-        setInterval(checkLocation, 100);
+        let rateLimitedCheckLocation = new RateLimiter(checkLocation, 200);
+        window.addEventListener('scroll', rateLimitedCheckLocation.run);
     };
 
     const setPanes = function (value, index, array) {
@@ -40,7 +41,7 @@ const NavbarLinksController = function (opts) {
             return;
         }
         for (let x=$panes.length-1; x>=1; x--) {
-            if (scrollLoc >= ($panes[x].offset().top - opts.navbarOffset - 10)) {
+            if (scrollLoc + 0.5*windowHeight >= ($panes[x].offset().top - opts.navbarOffset - 10)) {
                 setNewDisabled(x);
                 return;
             }
