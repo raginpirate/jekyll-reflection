@@ -5,13 +5,13 @@
   image_path: "index/projects/cprbot_icon.png"
 
 - title: "URL Shortener"
-  tags: "Rails, Full Stack, Fun, Heroku, <a href='https://github.com/raginpirate/url-shortener' target='_blank' rel='noopener' class='project-nested-link'>Git</a>"
+  tags: "Rails, Full Stack, Fun, Heroku, <a href='https://github.com/raginpirate/url-shortener' target='_blank' rel='noopener' class='project-nested-link' data-toggle='tooltip' title='Url-Shortener Github'>Git</a>"
   description: "My first Rails project, produces small URLs and tracks link clicks."
   url: "https://dw-url-shortener.herokuapp.com/"
   image_path: "index/projects/shortener_icon.png"
 
 - title: "Jekyll Reflection"
-  tags: "Jekyll, HTML, JS, AWS, <a href='https://github.com/raginpirate/jekyll-reflection' target='_blank' rel='noopener' class='project-nested-link'>Git</a>"
+  tags: "Jekyll, HTML, JS, AWS, <a href='https://github.com/raginpirate/jekyll-reflection' target='_blank' rel='noopener' class='project-nested-link' data-toggle='tooltip' title='Website Github'>Git</a>"
   description: "A progressive Jekyll theme that supports the best web practices possible."
   url: "https://github.com/raginpirate/jekyll-reflection"
   image_path: "global/favicon/android-chrome-192x192.png"
@@ -35,13 +35,13 @@
   image_path: "index/projects/reserve_in-store_icon.png"
 
 - title: "Sortr.ai"
-  tags: "Rails, Fun, Hackathon, Heroku, <a href='https://github.com/raginpirate/sortr.ai' target='_blank' rel='noopener' class='project-nested-link'>Git</a>"
-  description: "<a href='https://devpost.com/software/sortr-ai' target='_blank' rel='noopener' class='project-nested-link'>TerribleHackXIII</a> submission, won best sorting algorithm. Please do not click this."
+  tags: "Rails, Fun, Hackathon, Heroku, <a href='https://github.com/raginpirate/sortr.ai' target='_blank' rel='noopener' class='project-nested-link' data-toggle='tooltip' title='Sortr.ai Github'>Git</a>"
+  description: "<a href='https://devpost.com/software/sortr-ai' target='_blank' rel='noopener' class='project-nested-link' data-toggle='tooltip' title='TerribleHackXIII Listing'>TerribleHackXIII</a> submission, won best sorting algorithm. Please do not click this."
   url: "http://sortrai.herokuapp.com/"
   image_path: "index/projects/sortr_icon.png"
 
 - title: "Fera Magento Extension"
-  tags: "Magento, PHP, Js, Fera, <a href='https://github.com/feracommerce/magento_extension' target='_blank' rel='noopener' class='project-nested-link'>Git</a>"
+  tags: "Magento, PHP, Js, Fera, <a href='https://github.com/feracommerce/magento_extension' target='_blank' rel='noopener' class='project-nested-link' data-toggle='tooltip' title='Fera Extension Github'>Git</a>"
   description: "A simple Magento 1 extension to get Fera integrated with your store."
   url: "https://marketplace.magento.com/fera-fera-ai.html"
   image_path: "index/projects/fera_magento_icon.png"

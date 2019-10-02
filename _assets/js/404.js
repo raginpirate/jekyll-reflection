@@ -1,4 +1,3 @@
-//= require global
 //= require_tree ./404
 $(document).ready(function() {
     var countDowner = new CountDowner({

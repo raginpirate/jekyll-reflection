@@ -4,10 +4,15 @@
         <div class="row">
             {% for project in site.data.projects reversed %}
                 <div class="col-sm-6 col-lg-4 mb-3">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card h-100 shadow-sm icon-link">
                         <a href="{{ project.url }}" target="_blank" rel="noopener" class="project-link" data-toggle='tooltip' title='{{ project.title }}'></a>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16px" class="external-icon">
+                            <path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z">
+                            </path>
+                        </svg>
                         <div class="card-body text-center">
-                            <img class="mb-3" width="48" src="{% asset {{project.image_path}} @data %}" alt="{{ project.title }} Icon">
+                            <!-- modify the responsive image template to generate <= max size value, and default to normal size if <= 300 -->
+                            <img class="mb-3" width="48" src="{% asset {{project.image_path}} @path %}" alt="{{ project.title }} Icon">
                             <h5 class="card-title mb-1">{{ project.title }}</h5>
                             <small class="card-text">{{ project.description }}</small>
                             <div class="mb-3"></div>

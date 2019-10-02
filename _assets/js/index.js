@@ -1,4 +1,3 @@
-//= require global
 //= require_tree ./index
 $(document).ready(function() {
     const hiddenElementsStyler = new HiddenElementsStyler({

@@ -50,7 +50,4 @@ const HiddenElementsStyler = function (opts) {
             clearInterval(interval);
         }
     };
-
-    //timeout init to wait for page location to settle down (hoping to an ID anchor for example)
-    setTimeout(init, 250);
 };
