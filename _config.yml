@@ -1,7 +1,6 @@
 include: ['_pages']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
 destination: docs
-plugins:
-  - jekyll-assets
 assets:
   sources:
     - _assets

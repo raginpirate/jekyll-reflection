@@ -5,5 +5,5 @@ gem "uglifier", "~> 4.1.20"
 gem "mini_magick", "~> 4.9.3"
 
 group :jekyll_plugins do
-  gem "jekyll-assets", :path => "/mnt/c/Users/Daniel/Desktop/ubuntu/jekyll-assets"
+  gem "jekyll-assets", :git => "https://github.com/raginpirate/jekyll-assets.git", :branch => "v3_proxy_update"
 end
