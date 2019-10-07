@@ -11,8 +11,7 @@
                             </path>
                         </svg>
                         <div class="card-body text-center">
-                            <!-- modify the responsive image template to generate <= max size value, and default to normal size if <= 300 -->
-                            <img class="mb-3" width="48" src="{% asset {{project.image_path}} @path %}" alt="{{ project.title }} Icon">
+                            {% include global/_lazy_image.html max_res=48 classes="mb-3" alt=project.title lazy_image_path=project.image_path %}
                             <h5 class="card-title mb-1">{{ project.title }}</h5>
                             <small class="card-text">{{ project.description }}</small>
                             <div class="mb-3"></div>

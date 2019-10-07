@@ -27,7 +27,7 @@ const RateLimiter = function (fn, timeout) {
         setTimeout(function() {
             if (gotRateLimited) {
                 gotRateLimited = false;
-                callThenTimeout(fn, timeout);
+                callThenTimeout();
             } else {
                 notLimited = true;
                 gotRateLimited = false;
