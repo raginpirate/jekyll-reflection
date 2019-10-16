@@ -1,5 +1,4 @@
-include: ['_pages']
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
+include: '_pages'
 destination: docs
 assets:
   sources:

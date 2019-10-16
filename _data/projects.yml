@@ -14,7 +14,7 @@
   tags: "Jekyll, HTML, JS, AWS, <a href='https://github.com/raginpirate/jekyll-reflection' target='_blank' rel='noopener' class='project-nested-link' data-toggle='tooltip' title='Website Github'>Git</a>"
   description: "A progressive Jekyll theme that supports the best web practices possible."
   url: "https://github.com/raginpirate/jekyll-reflection"
-  image_path: "global/favicon/android-chrome-192x192.png"
+  image_path: "global/favicon/favicon.png"
 
 - title: "Fera Ai"
   tags: "Shopify, Rails, Full Stack, AWS"

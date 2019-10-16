@@ -1,11 +1,11 @@
 <div id="homeNav" class="fixed-top bg-theme-primary shadow-sm">
     <nav class="navbar navbar-expand-sm nav-width">
         <a class="navbar-brand" href="/#home" id="navToHome">
-            {% include global/_lazy_image.html max_res=30 classes="d-inline-block align-top" alt="Site Logo" lazy_image_path="global/favicon/favicon-32x32.png" %}
+            {% include global/_lazy_image.html max_res=30 classes="d-inline-block align-top" alt="Site Logo" lazy_image_path="global/favicon/favicon.png" %}
             Daniel Wyckoff
         </a>
         <button id="homeNavButton" class="navbar-toggler border-0 collapsed" type="button" data-toggle="collapse" data-target="#homeCollapseNav" aria-controls="homeCollapseNav" aria-expanded="false" aria-label="Toggle navigation">
-            <img class="navbar-icon" src="{% asset global/chevron-down-solid.svg @data %}" width="20" height="20" alt="Menu Button">
+            {% asset global/chevron-down-solid.svg @inline %}
         </button>
 
         <div class="collapse navbar-collapse" id="homeCollapseNav">
