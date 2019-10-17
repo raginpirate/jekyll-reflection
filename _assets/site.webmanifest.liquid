@@ -2,16 +2,41 @@
     "name": "{{ site.data.theme.pwa_name }}",
     "short_name": "{{ site.data.theme.pwa_short_name }}",
     "icons": [
-       {
-           "src": "",
-           "sizes": "192x192",
-           "type": "image/png"
-       },
         {
-            "src": "",
+            "src": "{% asset global/favicon/favicon.png magick:resize=72x proxy_output_id=72x @path %}",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "{% asset global/favicon/favicon.png magick:resize=96x proxy_output_id=96x @path %}",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "{% asset global/favicon/favicon.png magick:resize=128x proxy_output_id=128x @path %}",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "{% asset global/favicon/favicon.png magick:resize=144x proxy_output_id=144x @path %}",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "{% asset global/favicon/favicon.png magick:resize=152x proxy_output_id=152x @path %}",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "{% asset global/favicon/favicon.png magick:resize=384x proxy_output_id=384x @path %}",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "{% asset global/favicon/favicon.png magick:resize=512x proxy_output_id=512x @path %}",
             "sizes": "512x512",
             "type": "image/png"
-        }
+        },
     ],
     "theme_color": "{{ site.data.theme.pwa_theme_color }}",
     "background_color": "{{ site.data.theme.pwa_background_color }}",
