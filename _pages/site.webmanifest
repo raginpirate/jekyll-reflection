@@ -1,3 +1,6 @@
+---
+    permalink: /site.webmanifest
+---
 {
     "name": "{{ site.data.theme.pwa_name }}",
     "short_name": "{{ site.data.theme.pwa_short_name }}",
@@ -36,7 +39,7 @@
             "src": "{% asset global/favicon/favicon.png magick:resize=512x proxy_output_id=512x @path %}",
             "sizes": "512x512",
             "type": "image/png"
-        },
+        }
     ],
     "theme_color": "{{ site.data.theme.pwa_theme_color }}",
     "background_color": "{{ site.data.theme.pwa_background_color }}",

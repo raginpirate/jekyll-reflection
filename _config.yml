@@ -1,64 +1,73 @@
 include: ['_pages']
 destination: docs
 assets:
-  sources:
-    - _assets
-  precompile: [
-    {
-      src: "global/favicon/favicon.png",
-      dst: "/apple-touch-icon-57x57-precomposed.png",
-      args: {'magick:resize': "57x"}
-    },
-    {
-      src: "global/favicon/favicon.png",
-      dst: "/apple-touch-icon-76x76-precomposed.png",
-      args: {'magick:resize': "76x"}
-    },
-    {
-      src: "global/favicon/favicon.png",
-      dst: "/apple-touch-icon-120x120-precomposed.png",
-      args: {'magick:resize': "120x"}
-    },
-    {
-      src: "global/favicon/favicon.png",
-      dst: "/apple-touch-icon-152x152-precomposed.png",
-      args: {'magick:resize': "152x"}
-    },
-    {
-      src: "global/favicon/favicon.png",
-      dst: "/apple-touch-icon-180x180-precomposed.png",
-      args: {'magick:resize': "180x"}
-    },
-    {
-      src: "global/favicon/favicon.png",
-      dst: "/touch-icon-192x192.png",
-      args: {'magick:resize': "192x"}
-    },
-    {
-      src: "global/favicon/favicon.png",
-      dst: "/apple-touch-icon.png",
-      args: {'magick:resize': "180x"}
-    },
-    {
-      src: "global/favicon/favicon.png",
-      dst: "/apple-touch-icon-precomposed.png",
-      args: {'magick:resize': "180x"}
-    },
-    {
-      src: "global/favicon/favicon.png",
-      dst: "/favicon.ico",
-      args: {'magick:format': "ico"}
-    },
-    {
-      src: "robots.txt",
-      dst: "/robots.txt"
-    },
-    {
-      src: "browserconfig.xml.liquid",
-      dst: "/browserconfig.xml"
-    },
-    {
-      src: "service_worker.js",
-      dst: "/service_worker.js"
-    },
-  ]
+    sources:
+        - _assets
+    preproxy: [
+        {
+            src: "global/favicon/favicon.png",
+            args: {magick: {resize: "57x"}, proxy_output_id: "57x57"}
+        },
+        {
+            src: "global/favicon/favicon.png",
+            args: {magick: {resize: "76x"}, proxy_output_id: "76x76"}
+        },
+        {
+            src: "global/favicon/favicon.png",
+            args: {magick: {resize: "120x"}, proxy_output_id: "120x120"}
+        },
+        {
+            src: "global/favicon/favicon.png",
+            args: {magick: {resize: "152x"}, proxy_output_id: "152x152"}
+        },
+        {
+            src: "global/favicon/favicon.png",
+            args: {magick: {resize: "180x"}, proxy_output_id: "180x180"}
+        },
+        {
+            src: "global/favicon/favicon.png",
+            args: {magick: {resize: "192x"}, proxy_output_id: "192x192"}
+        }
+    ]
+    raw_precompile: [
+        {
+            src: "service_worker.js",
+            dst: "/service_worker.js"
+        },
+        {
+            src: "robots.txt",
+            dst: "/robots.txt"
+        },
+        {
+                src: "img/global/favicon/favicon-57x57.png",
+                dst: "/apple-touch-icon-57x57-precomposed.png"
+        },
+        {
+                src: "img/global/favicon/favicon-76x76.png",
+                dst: "/apple-touch-icon-76x76-precomposed.png"
+        },
+        {
+                src: "img/global/favicon/favicon-120x120.png",
+                dst: "/apple-touch-icon-120x120-precomposed.png"
+        },
+        {
+                src: "img/global/favicon/favicon-152x152.png",
+                dst: "/apple-touch-icon-152x152-precomposed.png"
+        },
+        {
+                src: "img/global/favicon/favicon-180x180.png",
+                dst: "/apple-touch-icon-180x180-precomposed.png"
+        },
+        {
+                src: "img/global/favicon/favicon-192x192.png",
+                dst: "/touch-icon-192x192.png"
+        },
+        {
+                src: "img/global/favicon/favicon-180x180.png",
+                dst: "/apple-touch-icon.png"
+        },
+        {
+                src: "img/global/favicon/favicon-180x180.png",
+                dst: "/apple-touch-icon-precomposed.png"
+        }
+    ]
