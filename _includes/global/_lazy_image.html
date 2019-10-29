@@ -1,19 +1,45 @@
-<picture>
-    <!--[if IE 9]><video style="display: none"><![endif]-->
-    <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=300x magick:format=webp proxy_output_id=300x @path %}"
-            media="(max-width: 299px)" type="image/webp"/>
-    <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=600x magick:format=webp proxy_output_id=600x @path %}"
-            media="(max-width: 599px)" type="image/webp"/>
-    <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=900x magick:format=webp proxy_output_id=900x @path %}" type="image/webp"/>
-    <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=300x proxy_output_id=300x @path %}"
-            media="(max-width: 299px)"/>
-    <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=600x proxy_output_id=600x @path %}"
-            media="(max-width: 599px)"/>
-    <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=900x proxy_output_id=900x @path %}"/>
-    <!--[if IE 9]></video><![endif]-->
-    <img src="{% asset '{{ include.lazy_image_path }}' magick:resize=50x proxy_output_id=50x @path %}"
-        data-src="{% asset '{{ include.lazy_image_path }}' magick:resize=900x proxy_output_id=900x @path %}"
+{% if include.max_res > 48 %}
+    <picture>
+        <!--[if IE 9]><video style="display: none"><![endif]-->
+        {% if include.max_res > 300 %}
+            <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=300x magick:format=webp proxy_output_id=300x @path %}" media="(max-width: 299px)" type="image/webp"/>
+            <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=300x proxy_output_id=300x @path %}" media="(max-width: 299px)"/>
+            {% if include.max_res > 600 %}
+                <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=600x magick:format=webp proxy_output_id=600x @path %}" media="(max-width: 599px)" type="image/webp"/>
+                <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=600x proxy_output_id=600x @path %}" media="(max-width: 599px)"/>
+                {% if include.max_res > 900 %}
+                    <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=900x magick:format=webp proxy_output_id=900x @path %}" type="image/webp" media="(max-width: 899px)"/>
+                    <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize=900x proxy_output_id=900x @path %}" media="(max-width: 899px)"/>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+        {% if include.max_is_original %}
+            <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:format=webp @path %}" type="image/webp"/>
+            <source data-srcset="{% asset '{{ include.lazy_image_path }}' @path %}"/>
+        {% else %}
+            <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize='{{ include.max_res }}x' magick:format=webp proxy_output_id='{{ include.max_res }}x' @path %}" type="image/webp"/>
+            <source data-srcset="{% asset '{{ include.lazy_image_path }}' magick:resize='{{ include.max_res }}x' proxy_output_id='{{ include.max_res }}x' @path %}"/>
+        {% endif %}
+        <!--[if IE 9]></video><![endif]-->
+        <img
+            src="{% asset '{{ include.lazy_image_path }}' magick:resize=48x proxy_output_id=48x @data %}"
+            {% if include.max_is_original %}
+                data-src="{% asset '{{ include.lazy_image_path }}' @path %}"
+            {% else %}
+                data-src="{% asset '{{ include.lazy_image_path }}' magick:resize='{{ include.max_res }}x' proxy_output_id='{{ include.max_res }}x' @path %}"
+            {% endif %}
+            class="{{ include.classes }} lazyload"
+            alt="{{ include.alt }}"
+            data-sizes="auto"/>
+    </picture>
+{% else %}
+    <img
+        {% if include.max_is_original %}
+            src="{% asset '{{ include.lazy_image_path }}' @data %}"
+        {% else %}
+            src="{% asset '{{ include.lazy_image_path }}' magick:resize='{{ include.max_res }}x' proxy_output_id='{{ include.max_res }}x' @data %}"
+        {% endif %}
         class="{{ include.classes }} lazyload"
         alt="{{ include.alt }}"
         data-sizes="auto"/>
-</picture>
+{% endif %}

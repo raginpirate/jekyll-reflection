@@ -2,5 +2,81 @@ include: ['_pages']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
 destination: docs
 assets:
-  sources:
-    - _assets
+    sources:
+        - _assets
+    preproxy: [
+        {
+            src: "global/favicon/favicon.png",
+            args: {magick: {resize: "57x"}, proxy_output_id: "57x57"}
+        },
+        {
+            src: "global/favicon/favicon.png",
+            args: {magick: {resize: "76x"}, proxy_output_id: "76x76"}
+        },
+        {
+           src: "global/favicon/favicon.png",
+           args: {magick: {resize: "120x"}, proxy_output_id: "120x120"}
+        },
+        {
+          src: "global/favicon/favicon.png",
+          args: {magick: {resize: "152x"}, proxy_output_id: "152x152"}
+        },
+        {
+          src: "global/favicon/favicon.png",
+          args: {magick: {resize: "180x"}, proxy_output_id: "180x180"}
+        },
+        {
+          src: "global/favicon/favicon.png",
+          args: {magick: {resize: "192x"}, proxy_output_id: "192x192"}
+        },
+        {
+          src: "global/favicon/favicon.png",
+          args: {magick: {define: "icon:auto-resize=64,48,32,16", format: "ico"}, proxy_output_id: "64x"}
+        }
+    ]
+    raw_precompile: [
+        {
+          src: "service_worker.js",
+          dst: "/service_worker.js"
+        },
+        {
+          src: "robots.txt",
+          dst: "/robots.txt"
+        },
+        {
+          src: "img/global/favicon/favicon-64x.ico",
+          dst: "/favicon.ico"
+        },
+        {
+          src: "img/global/favicon/favicon-57x57.png",
+          dst: "/apple-touch-icon-57x57-precomposed.png"
+        },
+        {
+          src: "img/global/favicon/favicon-76x76.png",
+          dst: "/apple-touch-icon-76x76-precomposed.png"
+        },
+        {
+          src: "img/global/favicon/favicon-120x120.png",
+          dst: "/apple-touch-icon-120x120-precomposed.png"
+        },
+        {
+          src: "img/global/favicon/favicon-152x152.png",
+          dst: "/apple-touch-icon-152x152-precomposed.png"
+        },
+        {
+          src: "img/global/favicon/favicon-180x180.png",
+          dst: "/apple-touch-icon-180x180-precomposed.png"
+        },
+        {
+          src: "img/global/favicon/favicon-192x192.png",
+          dst: "/touch-icon-192x192.png"
+        },
+        {
+          src: "img/global/favicon/favicon-180x180.png",
+          dst: "/apple-touch-icon.png"
+        },
+        {
+          src: "img/global/favicon/favicon-180x180.png",
+          dst: "/apple-touch-icon-precomposed.png"
+        }
+    ]

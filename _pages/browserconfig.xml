@@ -1,0 +1,15 @@
+---
+    permalink: /browserconfig.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="{% asset global/favicon/favicon.png magick:resize=70x proxy_output_id=70x @path %}"/>
+            <square150x150logo src="{% asset global/favicon/favicon.png magick:resize=150x proxy_output_id=150x @path %}"/>
+            <wide310x150logo src="{% asset global/favicon/og-image.png magick:resize=310x150 proxy_output_id=310x150 @path %}"/>
+            <square310x310logo src="{% asset global/favicon/favicon.png magick:resize=310x proxy_output_id=310x @path %}"/>
+            <TileColor>{{ site.data.theme.pwa_tile_color }}</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>

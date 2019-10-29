@@ -60,8 +60,4 @@ $(document).ready(function() {
         paneIds: ["#navToHome", "#navPage1", "#navPage2", "#navPage3", "#navPage4"],
         navbarOffset: 56
     });
-
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register("/service_worker.js");
-    }
 });
