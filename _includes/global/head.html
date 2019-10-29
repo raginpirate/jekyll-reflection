@@ -10,7 +10,13 @@
     <meta name="theme-color" content="{{ site.data.theme.pwa_theme_color }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% include global/pwa_icons.html %}
+    <meta property="og:title" content="{{ site.data.theme.og_title }}" />
+    <meta property="og:site_name" content="{{ site.data.theme.og_site_name }}" />
+    <meta property="og:image" content="{% asset 'global/favicon/og-image.png' @path %}" />
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="mask-icon" href="{% asset 'global/favicon/favicon.svg' @path %}" color="{{ site.data.theme.pwa_mask_color }}">
+    <link rel="manifest" href="site.webmanifest">
 
     {% asset global.css %}
     {% asset '{{ page.name | replace: ".html", ".css" }}' %}
