@@ -1,3 +1,18 @@
+//Site Version 1.0.0.
+//Update this version number if you want to bust cache.
+
+self.addEventListener('install', function(event) {
+    //Bust all cache on a new service worker installation.
+    //Feel free to improve the busting process if you will be making changes to this file and NOT wishing to invalidate old data.
+    caches.open('Jekyll-Reflection').then(function(cache) {
+        cache.keys().then(function(keys) {
+            keys.forEach(function(request) {
+                cache.delete(request);
+            });
+        });
+    });
+});
+
 self.addEventListener('fetch', function(event) {
     let strippedUrl = stripUrl(event.request.url);
     if (strippedUrl.endsWith(".html") || strippedUrl.endsWith("/")) {
@@ -71,5 +86,8 @@ const stripUrl = function(url) {
 
 const digestFreeUrl = function(url) {
     // Eliminate asset digest token
-    return url.replace(/(-[^-.]*\.)(?!.*-[^-.]*\.)/, ".");
+    if (url.indexOf("/assets/") === -1) {
+        return url.replace(/(-[^-.]*\.)(?!.*-[^-.]*\.)/, ".");
+    }
+    return url;
 };
