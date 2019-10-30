@@ -12,11 +12,9 @@ theme_secondary_background_color: "#151a2b"
 theme_secondary_text_color: "white"
 theme_secondary_link_color: "#057FFF"
 
-# Todo: replace pwa colors
-
-pwa_tile_color: "#9f00a7"
-pwa_theme_color: "#ffffff"
-pwa_background_color: "#ffffff"
+pwa_tile_color: "#151a2b"
+pwa_theme_color: "#151a2b"
+pwa_background_color: "#151a2b"
 pwa_mask_color: "#5bbad5"
 pwa_name: "danielwyckoff.ca"
 pwa_short_name: "Wyckoff"

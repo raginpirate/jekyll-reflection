@@ -8,10 +8,12 @@ Personal Jekyll website, soon to be a published jekyll theme.
 ^Literally anything is possible with #1 and #2 if you put your mind to it.
 
 # todo:
-JS commenting / improvements\
-\
 Background image css files need manual modification when someone edits the jekyll theme, need to find a better way\
 \
 Get service worker to cache everything on the very first page load with no overhead\
 \
-PWA base theme coloring\
+Figure out a clean way to minify the serviceworker.js (and perhaps html too since were static serving!) without comprimising the layout of our directory\
+\
+Move the browserconfig.xml and site.webmanifest out from pages, but while still placing them on root after compilation\
+\
+Use NPM for vendor assets instead of hard-copying them

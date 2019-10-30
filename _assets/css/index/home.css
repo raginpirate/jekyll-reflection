@@ -1,6 +1,6 @@
 /* Page specific styling */
 
-/* TODO: THIS IS ANNOYINGLY HARD-CODED */
+/* You must manually specify your background image resolutions to center and not resize across device sizes */
 .home-background {
     width: 600px;
     height: 670px;
