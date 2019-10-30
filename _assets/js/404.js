@@ -1,6 +1,7 @@
 //= require_tree ./404
-$(document).ready(function() {
-    var countDowner = new CountDowner({
+
+$(document).ready(function () {
+    CountDowner({
         beforeString: "Redirecting in ",
         afterString: "s..",
         startingTime: 5,

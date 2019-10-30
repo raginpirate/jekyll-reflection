@@ -1,11 +1,10 @@
 /**
- * THIS NEEDS REAL COMMENTS
+ * Forcefully close the expandable mobile navbar if a click/touch happens outside of it
  *
  * Construct with the following hash:
- * {string} checkboxSelector, selector for the checkbox which dictates state of fields
- * {string} endDateSelector, selector for theme field to disable/enable
- * {string} endTimeSelector, selector for theme field to disable/enable
- * {string} endThemeSelector, selector for theme field to disable/enable
+ * {string} mainNavHeaderSelector, selector for the entire navbar
+ * {string} mainNavButtonSelector, selector for the navbar expand button
+ * {string} mainNavCollapseSelector, selector for the collapsible section of the navbar
  *
  * @param {object} [opts] - An optional hash used for setup, as described above.
  */
@@ -20,7 +19,8 @@ const MobileDropdownCloser = function (opts) {
 
     const tryCloseDropdown = function (e) {
         const $target = $(e.target);
-        if (!($target.is($mainNavHeader) || $target.is($mainNavButton) || $mainNavButton.is('.collapsed') || ($(document).width() > 575))) {
+        if (!($target.is($mainNavHeader) || $target.is($mainNavButton) ||
+            $mainNavButton.is('.collapsed') || ($(document).width() > 575))) {
             $mainNavCollapse.collapse('hide');
         }
     };

@@ -1,19 +1,24 @@
 /**
- * THIS NEEDS REAL COMMENTS
+ * Style a bunch of matching hidden elements, and then style them again when they get seen.
+ * Triggers will be passed a jquery object representing an element matched by the key.
  *
- * Construct with the following hash:
- * {string} checkboxSelector, selector for the checkbox which dictates state of fields
- * {string} endDateSelector, selector for theme field to disable/enable
- * {string} endTimeSelector, selector for theme field to disable/enable
- * {string} endThemeSelector, selector for theme field to disable/enable
+ * Construct a hash where:
+ * Every key is an element selector (unique or non-unique),
+ * Every value is an object with:
+ * {function} hideTrigger - A function to be triggered when the element is not visible on page load (one time run).
+ * {function} showTrigger - A function to be triggered when the element goes from hidden to revealed (one time run).
  *
  * @param {object} [opts] - An optional hash used for setup, as described above.
  */
 const HiddenElementsStyler = function (opts) {
     const $window = $(window);
-    let $invisibleElems = [];
+    let invisibleElems = [];
     let interval;
 
+    /**
+     * For every matching element of a key in opts:
+     * If it is hidden, run the key's hideTrigger and push the elem along with the showTrigger into invisibleElems
+     */
     const init = function () {
         const windowHeight = $window.height();
         const scrollLoc = $window.scrollTop();
@@ -23,31 +28,36 @@ const HiddenElementsStyler = function (opts) {
                 const offsetTop = $elem.offset().top;
                 const isPast = offsetTop < (scrollLoc + windowHeight);
                 if (!isPast) {
-                    opts[key]["hideTrigger"]($elem);
-                    $invisibleElems.push({$elem: $elem, showTrigger: opts[key]["showTrigger"]});
+                    opts[key].hideTrigger($elem);
+                    invisibleElems.push({$elem: $elem, showTrigger: opts[key]["showTrigger"]});
                 }
             });
         }
+        // Check periodically if an element has been seen
         interval = setInterval(checkTrigger, 200);
     };
 
+    /**
+     * Trigger any revealed element's showtrigger and splice it out of the array
+     * We return after one removal so that there is a gradual reveal effect if someone scrolls quickly
+     */
     const checkTrigger = function () {
         const windowHeight = $window.height();
         const scrollLoc = $window.scrollTop();
-        var len = 0;
-        for (let index in $invisibleElems) {
-            len++;
-            let $elem = $invisibleElems[index].$elem;
+        for (let index in invisibleElems) {
+            let $elem = invisibleElems[index].$elem;
             const offsetTop = $elem.offset().top;
             const isPast = offsetTop < (scrollLoc + windowHeight);
             if (isPast) {
-                $invisibleElems[index]["showTrigger"]($elem);
-                delete $invisibleElems[index];
+                invisibleElems[index].showTrigger($elem);
+                invisibleElems.splice(index, 1);
                 return;
             }
         }
-        if (len === 0) {
+        if (invisibleElems.length === 0) {
             clearInterval(interval);
         }
     };
+
+    init();
 };

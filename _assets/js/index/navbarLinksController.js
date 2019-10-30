@@ -1,71 +1,93 @@
 /**
- * THIS NEEDS REAL COMMENTS
+ * Bind to a series of unique links with hrefs set to anchors on the page
+ * Disable the link representing the section of the page we best lie inside
+ * Provide a smooth scroll to the anchor points when clicked if not on mobile
+ *
+ * NOTE: linkIds must be provided in the order in which their anchors would appear on page
  *
  * Construct with the following hash:
- * {string} checkboxSelector, selector for the checkbox which dictates state of fields
- * {string} endDateSelector, selector for theme field to disable/enable
- * {string} endTimeSelector, selector for theme field to disable/enable
- * {string} endThemeSelector, selector for theme field to disable/enable
+ * {array} linkIds, An array of strings representing unique selectors for links with an anchor to a section of the page
+ * {int} navbarOffset, The height of the navbar
  *
  * @param {object} [opts] - An optional hash used for setup, as described above.
  */
 const NavbarLinksController = function (opts) {
-    let $window = $(window);
-    let $panes = [];
-    let $navLinks = [];
-    let $lastDisabled;
+    const $window = $(window);
+    // An array of link objects, each containing a $navLink jquery object and
+    // a $linkPoint jquery object the navLink anchors to
+    let links = [];
+    let $lastDisabled = $(null);
 
     const init = function () {
-        opts.paneIds.forEach(setPanes);
-        $lastDisabled = $(null);
-        checkLocation();
-        let rateLimitedCheckLocation = new RateLimiter(checkLocation, 200);
+        // Initialize the links array
+        opts.linkIds.forEach(setPanes);
+        // Bind a rate-limited check for what $linkPoint the window is centered on
+        const rateLimitedCheckLocation = new RateLimiter(checkLocation, 200);
+        rateLimitedCheckLocation.run();
         window.addEventListener('scroll', rateLimitedCheckLocation.run);
     };
 
-    const setPanes = function (value, index, array) {
-        $navLinks.push($(value));
-        $panes.push($($navLinks[index].attr('href').substring(1)));
-        $navLinks[index].on("click", function(e) {
+    /**
+     * Creates a link object for the provided linkId selector
+     * @param linkId - A selector that uniquely identifies a link with an href pointing to an anchor on the page
+     */
+    const setPanes = function (linkId) {
+        const $navLink = $(linkId);
+        const $linkPoint = $($navLink.attr('href').substring(1));
+        links.push({$navLink: $navLink, $linkPoint: $linkPoint});
+        $navLink.on("click", function (e) {
             e.preventDefault();
-            navigateToPane(index);
+            // Replace normal anchor jumping with smooth scrolling effect
+            navigateToPane($linkPoint);
         });
     };
 
-    const checkLocation = function (e) {
+    /**
+     * Identify which anchor our page is centered around
+     */
+    const checkLocation = function () {
         const windowHeight = $window.height();
         const scrollLoc = $window.scrollTop();
 
+        // The last link is active if we are very close to the end of the page
+        // This is necessary for thin footer sections that might have a nav link
         if ((windowHeight + scrollLoc) >= $(document).height() - 10) {
-            setNewDisabled($panes.length-1);
+            setNewDisabled(links[links.length-1].$navLink);
             return;
         }
-        for (let x=$panes.length-1; x>=1; x--) {
-            if (scrollLoc + 0.5*windowHeight >= ($panes[x].offset().top - opts.navbarOffset - 10)) {
-                setNewDisabled(x);
+        for (let x=links.length-1; x>=1; x--) {
+            if (scrollLoc + 0.5*windowHeight >= (links[x].$linkPoint.offset().top - opts.navbarOffset - 10)) {
+                setNewDisabled(links[x].$navLink);
                 return;
             }
         }
-        setNewDisabled(0);
+        setNewDisabled(links[0].$navLink);
     };
 
-    const setNewDisabled = function (index) {
-        if ($lastDisabled !== $navLinks[index]) {
+    /**
+     * Disable the provided link if it is not already disabled
+     * @param $navLink - Jquery link object
+     */
+    const setNewDisabled = function ($navLink) {
+        if (!$lastDisabled.is($navLink)) {
             $lastDisabled.removeClass("active disabled");
-            $lastDisabled = $navLinks[index];
+            $lastDisabled = $navLink;
             $lastDisabled.addClass("active disabled");
         }
     };
 
-    const navigateToPane = function (index) {
+    /**
+     * Animate the page moving to the anchor if we are not on a mobile device
+     * @param $linkPoint - Jquery anchor object
+     */
+    const navigateToPane = function ($linkPoint) {
         if ($window.width() >= 576) {
             $('html, body').animate({
-                scrollTop: ($panes[index].offset().top - opts.navbarOffset)
+                scrollTop: ($linkPoint.offset().top - opts.navbarOffset)
             }, 1000);
         } else {
-            $window.scrollTop($panes[index].offset().top - opts.navbarOffset);
+            $window.scrollTop($linkPoint.offset().top - opts.navbarOffset);
         }
-
     };
 
     init();
