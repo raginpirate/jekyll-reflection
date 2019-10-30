@@ -1,5 +1,5 @@
 # jekyll-reflection
-Personal Jekyll website, soon to be a published jekyll theme.
+All this repo needs is a good readme, and its a real theme.
 
 # Paradigms
 \#1 Aided by js and browser support BUT NOT COMPRIMISED without such comforts.\
