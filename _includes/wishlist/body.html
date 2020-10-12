@@ -1,0 +1,16 @@
+<div class="container py-5 my-4 my-md-5">
+    <ul class="list-group">
+        <h4 class="mb-4">Possible gift ideas!</h4>
+        {% for wish in site.data.wishlist reversed %}
+            <li class="list-group-item">
+                <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1 font-weight-semiBold">{{ wish.title }}</p>
+                    <small data-toggle="tooltip" data-placement="top" title="Date added to wishlist">{{ wish.date }}</small>
+                </div>
+                {% unless wish.description.blank? %}
+                    <small class="ml-3 text-muted">{{ wish.description }}</small>
+                {% endunless %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>

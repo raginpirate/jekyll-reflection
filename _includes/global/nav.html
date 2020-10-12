@@ -1,5 +1,5 @@
-<div id="homeNav" class="fixed-top bg-theme-primary shadow-sm">
-    <nav class="navbar navbar-expand-sm nav-width">
+<div id="homeNav" class="fixed-top bg-theme-primary shadow-md">
+    <nav class="navbar navbar-expand-md nav-width">
         <a class="navbar-brand" href="/#home" id="navToHome">
             {% include global/_lazy_image.html max_res=30 classes="d-inline-block align-top" alt="Site Logo" lazy_image_path="global/favicon/favicon.png" %}
             Daniel Wyckoff
@@ -9,20 +9,23 @@
         </button>
 
         <div class="collapse navbar-collapse" id="homeCollapseNav">
-            <ul class="navbar-nav ml-auto mt-2 mt-sm-0 mb-2 mb-sm-0">
-                <li class="nav-item mx-4 mx-sm-0">
+            <ul class="navbar-nav ml-auto mt-2 mt-md-0 mb-2 mb-md-0">
+                <li class="nav-item mx-4 mx-md-0">
                     <a class="nav-link" href="/#home" id="navPage1">Home</a>
                 </li>
-                <li class="nav-item mx-4 mx-sm-0">
+                <li class="nav-item mx-4 mx-md-0">
                     <a class="nav-link" href="/#about" id="navPage2">About</a>
                 </li>
-                <li class="nav-item mx-4 mx-sm-0">
+                <li class="nav-item mx-4 mx-md-0">
                     <a class="nav-link" href="/#projects" id="navPage3">Projects</a>
                 </li>
-                <li class="nav-item mx-4 mx-sm-0">
+                <li class="nav-item mx-4 mx-md-0">
                     <a class="nav-link" href="/#contact" id="navPage4">Contact</a>
                 </li>
-                <li class="nav-item mx-4 ml-sm-4 mr-sm-0 border-0">
+                <li class="nav-item mx-4 ml-md-4 mr-md-0">
+                    <a class="nav-link" href="/wishlist">Wishlist</a>
+                </li>
+                <li class="nav-item mx-4 mx-md-0 border-0">
                     <a class="nav-link" href="{% asset 'Daniel Wyckoff Resume.pdf' @path %}" target="_blank" rel="noopener">Resume</a>
                 </li>
             </ul>
