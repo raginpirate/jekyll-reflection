@@ -7,6 +7,6 @@
     background-color: #f5faff;
 }
 
-.list-group-item-light:first-of-type {
-    margin-top: 1.5rem;
+.list-group-item-light {
+    background-color: #f9f9f9;
 }
