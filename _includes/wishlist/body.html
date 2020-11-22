@@ -4,15 +4,25 @@
         {% for wish in site.data.wishlist reversed %}
             {% if wish.purchased %}
                 <li class="list-group-item list-group-item-light strikethrough" data-toggle="tooltip" data-placement="top" title="{{ wish.purchased }}">
+            {% elsif wish.href %}
+                <a class="list-group-item list-group-item-action" href="{{ wish.href }}">
             {% else %}
                 <li class="list-group-item">
             {% endif %}
+
                 <div class="d-flex w-100 justify-content-between">
                     <p class="mb-1 font-weight-semiBold">{{ wish.title }}</p>
                     <small data-toggle="tooltip" data-placement="top" title="Date added to wishlist">{{ wish.date }}</small>
                 </div>
                 <small class="ml-3 text-muted">{{ wish.description }}</small>
-            </li>
+
+            {% if wish.purchased %}
+                </li>
+            {% elsif wish.href %}
+                </a>
+            {% else %}
+                </li>
+            {% endif %}
         {% endfor %}
     </ul>
 </div>

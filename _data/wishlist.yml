@@ -1,6 +1,35 @@
 - title: "Tea"
   date: "2020-10-11"
   description: "don't buy me this unless your name is joseph"
+  purchased: "Tea bought by Joseph, 2020-11-18"
+
+- title: "Dishware"
+  date: "2020-10-11"
+  description: "plate set, bowl set"
+  purchased: "Purchased for myself, 2020-11-22"
+
+- title: "Cookware"
+  date: "2020-10-11"
+  description: "proper sized pot & pan set, soft silicone spatulas"
+  purchased: "Purchased for myself, 2020-11-22"
+
+- title: "Keyboard cleaning goop"
+  date: "2020-10-11"
+  purchased: "Purchased by Dad, 2020-11-14"
+
+- title: "Cable bites"
+  date: "2020-10-11"
+  purchased: "Purchased by Dad, 2020-11-14"
+
+- title: "Nintendo switch"
+  date: "2020-10-11"
+  description: "not lite"
+  purchased: "Switch lite bought by Jay, 2020-10-19"
+
+- title: "House slip-on shoes"
+  date: "2020-10-11"
+  description: "the kind you could go for a walk in"
+  purchased: "Purchased by Mom, 2020-11-14"
 
 - title: "Sweat pants"
   date: "2020-10-11"
@@ -12,6 +41,7 @@
 
 - title: "Mcgregor socks"
   date: "2020-10-11"
+  href: "https://www.thebay.com/c/men/mens-clothing/underwear-socks/mcgregor"
 
 - title: "Pokemon go ball"
   date: "2020-10-11"
@@ -20,44 +50,36 @@
   date: "2020-10-25"
   description: "17, trench, purpose (japanese deluxe edition), 1999, everything means nothing, no future, igor, GREY area"
 
-- title: "Dishware"
-  date: "2020-10-11"
-  description: "plate set, bowl set"
-
-- title: "Cookware"
-  date: "2020-10-11"
-  description: "proper sized pot & pan set, soft silicone spatulas"
-
 - title: "Polarized sunglasses"
   date: "2020-10-11"
   description: "raybans/pitvipers are some ideas"
 
 - title: "Bike"
   date: "2020-10-11"
+  description: "idk, I should get a bike at some point"
 
 - title: "Bedding"
   date: "2020-10-11"
-  description: "white 400tc cotton percale sheet set"
-
-- title: "Keyboard cleaning goop"
-  date: "2020-10-11"
-
-- title: "Cable bites"
-  date: "2020-10-11"
-
-- title: "Nintendo switch"
-  date: "2020-10-11"
-  description: "not lite"
-  purchased: "Switch lite bought by Jay, 2020-10-19"
-
-- title: "House slip-on shoes"
-  date: "2020-10-11"
-  description: "the kind you could go for a walk in"
+  description: "white <400tc cotton percale sheet set"
+  href: "https://www.thebay.com/product/home-studio-200-thread-count-4-piece-cotton-percale-sheet-set-91696087.html"
 
 - title: "Gfuel Tubs"
   date: "2020-10-11"
   description: "interested in tropical flavours, really like pewdiepie flavour"
+  href: "https://gfuel.com/collections/g-fuel/products/pewdiepie"
 
 - title: "360 controller"
   date: "2020-10-11"
   description: "kevin you still need to give me this"
+
+- title: "Red Bull"
+  date: "2020-11-22"
+  description: "interested in different flavours, not a fan of blueberry or coconut."
+
+- title: "Pastries"
+  date: "2020-11-22"
+
+- title: "Mugs"
+  date: "2020-11-22"
+  description: "12+ oz mugs, preferably without protruding designs. No brand restrictions here"
+  href: "https://www.davidstea.com/ca_en/teaware/teaware/nordic-mugs/"
