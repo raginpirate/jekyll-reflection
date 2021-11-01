@@ -31,46 +31,59 @@
   description: "the kind you could go for a walk in"
   purchased: "Purchased by Mom, 2020-11-14"
 
-- title: "Sweat pants"
+- title: "Polarized sunglasses"
   date: "2020-10-11"
-  description: "streetwear casual preferred"
+  description: "raybans/pitvipers are some ideas"
+  purchased: "Purchased by Tyler, 2020-11-10"
 
-- title: "Paper thin hoodies"
+- title: "Bedding"
   date: "2020-10-11"
-  description: "should not keep me warm"
+  description: "white <400tc cotton percale sheet set"
+  href: "https://www.thebay.com/product/home-studio-200-thread-count-4-piece-cotton-percale-sheet-set-91696087.html"
+  purchased: "Purchased by Sarah, 2020-12-25"
+
+- title: "360 controller"
+  date: "2020-10-11"
+  description: "kevin you still need to give me this"
+  purchased: "Purchased by Sarah, 2020-12-25"
 
 - title: "Mcgregor socks"
   date: "2020-10-11"
   href: "https://www.thebay.com/c/men/mens-clothing/underwear-socks/mcgregor"
+  purchased: "I have too many now, 2021-10-31"
+
+- title: "Gfuel Tubs"
+  date: "2020-10-11"
+  description: "interested in tropical flavours, really like pewdiepie flavour"
+  href: "https://gfuel.com/collections/g-fuel/products/pewdiepie"
+  purchased: "My stockpile is insane, 2021-10-31"
+
+- title: "Mugs"
+  date: "2020-11-22"
+  description: "12+ oz mugs, preferably without protruding designs. No brand restrictions here"
+  href: "https://www.davidstea.com/ca_en/teaware/teaware/nordic-mugs/"
+  purchased: "I've got enough, 2021-10-31"
+
+- title: "Sweat pants"
+  date: "2020-10-11"
+  description: "streetwear casual preferred"
+  href: "https://www.roots.com/ca/en/original-slim-sweatpant-39090167.html"
+
+- title: "Zip up hoodies"
+  date: "2020-10-11"
+  description: "coder vibe check"
+  href: "https://www.roots.com/ca/en/original-full-zip-hoodie-39040512.html"
 
 - title: "Pokemon go ball"
   date: "2020-10-11"
 
 - title: "Vinyls"
   date: "2020-10-25"
-  description: "17, trench, purpose (japanese deluxe edition), 1999, everything means nothing, no future, igor, GREY area"
-
-- title: "Polarized sunglasses"
-  date: "2020-10-11"
-  description: "raybans/pitvipers are some ideas"
+  description: "17, purpose (japanese deluxe edition), 1999, everything means nothing, no future, GREY area, TYRON, etc."
 
 - title: "Bike"
   date: "2020-10-11"
-  description: "idk, I should get a bike at some point"
-
-- title: "Bedding"
-  date: "2020-10-11"
-  description: "white <400tc cotton percale sheet set"
-  href: "https://www.thebay.com/product/home-studio-200-thread-count-4-piece-cotton-percale-sheet-set-91696087.html"
-
-- title: "Gfuel Tubs"
-  date: "2020-10-11"
-  description: "interested in tropical flavours, really like pewdiepie flavour"
-  href: "https://gfuel.com/collections/g-fuel/products/pewdiepie"
-
-- title: "360 controller"
-  date: "2020-10-11"
-  description: "kevin you still need to give me this"
+  description: "should probably get a new one at some point"
 
 - title: "Red Bull"
   date: "2020-11-22"
@@ -79,7 +92,18 @@
 - title: "Pastries"
   date: "2020-11-22"
 
-- title: "Mugs"
-  date: "2020-11-22"
-  description: "12+ oz mugs, preferably without protruding designs. No brand restrictions here"
-  href: "https://www.davidstea.com/ca_en/teaware/teaware/nordic-mugs/"
+- title: "Large Serving Tray"
+  date: "2021-10-31"
+  description: "so I stop spilling food on my deskmats"
+
+- title: "House shoes"
+  date: "2021-10-31"
+  description: "not fluffy, something durable, comfy, and a little breathable"
+
+- title: "Coffee Beans"
+  date: "2021-10-31"
+  description: "get me that primo single origin stuff, big fan of robusta"
+
+- title: "Boardgames"
+  date: "2021-10-31"
+  description: "Quacks of Quedlinburg, Wingspan, Small World, Terraforming Mars, Coup Reformation, etc."

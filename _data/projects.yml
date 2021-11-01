@@ -18,7 +18,7 @@
 
 - title: "Fera Ai"
   tags: "Shopify, Rails, Full Stack, AWS"
-  description: "My current job, Fera helps to personalize your store in real time with customer data."
+  description: "My former job, Fera helps to personalize your store in real time with customer data."
   url: "https://www.fera.ai/"
   image_path: "index/projects/fera_icon.png"
 
@@ -45,3 +45,9 @@
   description: "A simple Magento 1 extension to get Fera integrated with your store."
   url: "https://marketplace.magento.com/fera-fera-ai.html"
   image_path: "index/projects/fera_magento_icon.png"
+
+- title: "Shopify"
+  tags: "Rails, GraphQL, JS, PayPal, Stripe, Apple Pay"
+  description: "A member of the Subscriptions team, building out integrations with various payment providers"
+  url: "https://www.shopify.ca"
+  image_path: "index/projects/shopify_icon.png"
