@@ -64,26 +64,45 @@
   href: "https://www.davidstea.com/ca_en/teaware/teaware/nordic-mugs/"
   purchased: "I've got enough, 2021-10-31"
 
+- title: "Pokemon go ball"
+  date: "2020-10-11"
+  purchased: "I lost interest in this, 2022-10-30"
+
+- title: "Bike"
+  date: "2020-10-11"
+  description: "should probably get a new one at some point"
+  purchased: "I lost interest in this, 2022-10-30"
+
+- title: "Large Serving Tray"
+  date: "2021-10-31"
+  description: "so I stop spilling food on my deskmats"
+  purchased: "Sarah & Dad, 2021-11-10"
+
+- title: "House shoes"
+  date: "2021-10-31"
+  description: "not fluffy, something durable, comfy, and a little breathable"
+  purchased: "Mom, 2021-11-10"
+
+- title: "Coffee Beans"
+  date: "2021-10-31"
+  description: "get me that primo single origin stuff, big fan of robusta"
+  purchased: "My freezer is full of beans, 2022-10-30"
+
 - title: "Sweat pants"
   date: "2020-10-11"
   description: "streetwear casual preferred"
   href: "https://www.roots.com/ca/en/original-slim-sweatpant-39090167.html"
+  purchased: "I think I'm good for once, 2022-10-30"
 
 - title: "Zip up hoodies"
   date: "2020-10-11"
   description: "coder vibe check"
   href: "https://www.roots.com/ca/en/original-full-zip-hoodie-39040512.html"
-
-- title: "Pokemon go ball"
-  date: "2020-10-11"
+  purchased: "I think I'm good for once, 2022-10-30"
 
 - title: "Vinyls"
   date: "2020-10-25"
-  description: "17, purpose (japanese deluxe edition), 1999, everything means nothing, no future, GREY area, TYRON, etc."
-
-- title: "Bike"
-  date: "2020-10-11"
-  description: "should probably get a new one at some point"
+  description: "17, 1999, everything means nothing, no future, GREY area, what could possibly go wrong, harry's house, demon days, promises, etc."
 
 - title: "Red Bull"
   date: "2020-11-22"
@@ -91,19 +110,27 @@
 
 - title: "Pastries"
   date: "2020-11-22"
-
-- title: "Large Serving Tray"
-  date: "2021-10-31"
-  description: "so I stop spilling food on my deskmats"
-
-- title: "House shoes"
-  date: "2021-10-31"
-  description: "not fluffy, something durable, comfy, and a little breathable"
-
-- title: "Coffee Beans"
-  date: "2021-10-31"
-  description: "get me that primo single origin stuff, big fan of robusta"
+  description: "I'm not a big fan of cherry"
 
 - title: "Boardgames"
   date: "2021-10-31"
-  description: "Quacks of Quedlinburg, Wingspan, Small World, Terraforming Mars, Coup Reformation, etc."
+  description: "Dominion, Quacks of Quedlinburg, Wingspan, Terraforming Mars, etc."
+
+- title: "Nice Clothes, w.e. your thinking"
+  date: "2022-10-30"
+  description: "32x32 / medium sizing"
+  
+- title: "Knock | Aergrind"
+  date: "2022-10-30"
+  description: "An espresso handgrinder"
+  href: "https://cafune.ca/collections/made-by-knock/products/knock-aergrind-2022-edition"
+  
+- title: "Loveramics | Coffee Dosing Trays"
+  date: "2022-10-30"
+  description: "James Hoffman merch"
+  href: "https://cafune.ca/collections/scoops-spoons/products/loveramics-coffee-dosing-trays-set-of-2"
+
+- title: "Thunderfury, Blessed Blade of the Windseeker"
+  date: "2022-10-30"
+  description: "Chance on hit: Blasts your enemy with lightning, dealing 15 Nature damage and then jumping to additional nearby enemies.  Each jump reduces that victim's Nature resistance by 1. Affects 5 targets. Your primary target is also consumed by a cyclone, slowing its attack speed by 20% for 12 sec."
+  href: "https://www.wowhead.com/item=19019/thunderfury-blessed-blade-of-the-windseeker"
