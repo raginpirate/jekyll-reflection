@@ -7,11 +7,11 @@
                     <div class="pt-lg-5 pt-xl-5"></div>
                     <div class="pt-lg-5 pt-xl-5"></div>
                     <h1 class="pt-lg-5 pt-xl-5">Hello.</h1>
-                    <p>Is it me you're looking for?</p>
+                    <p>Is it me you're looking for?</p>>
+                    {% include global/_lazy_image.html max_res=350 classes="rounded mx-auto d-block w-100 p1 mb-5 headshot-column" alt="Professional photo by Yasir" lazy_image_path="index/about/bodyshot.png" %}
                 </div>
             </div>
             <div class="col-lg-6">
-                {% include global/_lazy_image.html max_res=350 classes="rounded mx-auto d-block w-100 p1 mb-5 headshot-column" alt="Professional Headshot" lazy_image_path="index/about/headshot.png" %}
                 {% for category in site.data.about %}
                     <h2>{{ category.title }}</h2>
                     <p>{{ category.discussion }}</p>
