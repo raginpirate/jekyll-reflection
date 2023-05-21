@@ -1,5 +1,5 @@
 - title: "CprBot"
-  tags: "Java, Selenium, AWS"
+  tags: "Python, AWS Lambda"
   description: "A robot that validates SaveALifeCPR's course bookings and forwards them to the Red Cross."
   url: "https://savealifecpr.ca/"
   image_path: "index/projects/cprbot_icon.png"
