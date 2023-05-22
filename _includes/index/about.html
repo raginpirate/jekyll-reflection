@@ -3,15 +3,12 @@
     <div class="container py-5 bg-theme-secondary">
         <div class="row">
             <div class="col-lg-6">
-                <div class="sticky-top pb-4">
-                    <div class="pt-lg-5 pt-xl-5"></div>
-                    <div class="pt-lg-5 pt-xl-5"></div>
-                    <h1 class="pt-lg-5 pt-xl-5">Hello.</h1>
-                    <p>Is it me you're looking for?</p>
+                <div class="sticky-top sticky-nav-offset">
+                    <h1 class="mt-xl-n2 mt-lg-n2 text-center">Hello :)</h1>
+                    {% include global/_lazy_image.html max_res=350 classes="rounded mx-auto d-block w-100 p1 py-3 headshot-column" alt="Professional photo by Yasir" lazy_image_path="index/about/bodyshot.jpg" %}
                 </div>
             </div>
             <div class="col-lg-6">
-                {% include global/_lazy_image.html max_res=350 classes="rounded mx-auto d-block w-100 p1 mb-5 headshot-column" alt="Professional Headshot" lazy_image_path="index/about/headshot.png" %}
                 {% for category in site.data.about %}
                     <h2>{{ category.title }}</h2>
                     <p>{{ category.discussion }}</p>
