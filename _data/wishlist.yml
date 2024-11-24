@@ -119,15 +119,15 @@
 
 - title: "Vinyls"
   date: "2020-10-25"
-  description: "17, 1999, everything means nothing, no future, GREY area, what could possibly go wrong, harry's house, demon days, promises, etc."
+  description: "Persona, CHROMAKOPIA, GNX, in loving memory, UGLY, etc."
 
-- title: "Pastries"
+- title: "Food"
   date: "2020-11-22"
-  description: "I'm not a big fan of cherry"
+  description: "Pastries, gummy candies (Pure Premium), fudge, love it all (except cherry flav)"
 
 - title: "Boardgames"
   date: "2021-10-31"
-  description: "Terraforming Mars, etc."
+  description: "Terraforming Mars, Steam Up Deluxe, etc."
 
 - title: "Nice Clothes, w.e. your thinking"
   date: "2022-10-30"
@@ -137,3 +137,22 @@
   date: "2022-10-30"
   description: "Chance on hit: Blasts your enemy with lightning, dealing 15 Nature damage and then jumping to additional nearby enemies.  Each jump reduces that victim's Nature resistance by 1. Affects 5 targets. Your primary target is also consumed by a cyclone, slowing its attack speed by 20% for 12 sec."
   href: "https://www.wowhead.com/item=19019/thunderfury-blessed-blade-of-the-windseeker"
+
+- title: "Leather Gloves"
+  date: "2024-11-23"
+  description: "Looking for some very nice, slim fitting gloves for the fall/winter."
+
+- title: "Gooseneck Kettle"
+  date: "2024-11-23"
+  description: "Looking for a nice kettle with temp control because I'm Bougie."
+  href: "https://www.amazon.ca/Fellow-Electric-Pour-over-Temperature-Stopwatch/dp/B0BF7NKK81"
+
+- title: "Creepcast Merch"
+  date: "2024-11-23"
+  description: "Fire podcast, their sweater looks awesome"
+  href: "https://creepcast.junipercreates.com/p/7983198798015"
+
+- title: "MTG Product"
+  date: "2024-11-23"
+  description: "Any sealed product is appreciated. Prefer boosters, or secret lair products when they are good looking, not precon decks or 'games'"
+  href: "https://secretlair.wizards.com/us/en"
