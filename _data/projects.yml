@@ -47,7 +47,7 @@
   image_path: "index/projects/fera_magento_icon.png"
 
 - title: "Shopify"
-  tags: "Rails, GraphQL, JS, PayPal, Stripe, Apple Pay"
-  description: "A member of the Subscriptions team, building out integrations with various payment providers"
+  tags: "Rails, GraphQL, Payments"
+  description: "Member of the Payments Platform, leading a 16 man team architecting the world's largest card vault."
   url: "https://www.shopify.ca"
   image_path: "index/projects/shopify_icon.png"
